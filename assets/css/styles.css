@@ -1,0 +1,472 @@
+/* =========================================================
+   SS Coconuts — Complete Stylesheet
+   Font  : Poppins (Google Fonts)
+   Brand : #B8292F
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ── 1. Design Tokens ─────────────────────────────────────── */
+:root {
+  --primary:        #B8292F;
+  --primary-dark:   #9b2227;
+  --primary-light:  #fae8e8;
+  --cream:          #fdf6f0;
+  --text-dark:      #1a1a1a;
+  --text-mid:       #444444;
+  --text-light:     #777777;
+  --white:          #ffffff;
+  --border:         #e8e0da;
+  --shadow-sm:      0 2px 8px  rgba(0,0,0,.08);
+  --shadow-md:      0 6px 24px rgba(0,0,0,.12);
+  --shadow-lg:      0 16px 48px rgba(0,0,0,.16);
+  --radius-sm:      6px;
+  --radius-md:      12px;
+  --radius-lg:      20px;
+  --transition:     .3s ease;
+}
+
+/* ── 2. Reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html  { scroll-behavior: smooth; }
+body  {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+
+}
+img { display: block; max-width: 100%; }
+a   { text-decoration: none; color: inherit; }
+ul  { list-style: none; }
+
+/* ── 3. Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track  { background: #f1f1f1; }
+::-webkit-scrollbar-thumb  { background: var(--primary); border-radius: 4px; }
+
+/* ── 4. Custom Tailwind Color Overrides ───────────────────── */
+/* These extend / override Tailwind's default palette          */
+.bg-primary            { background-color: var(--primary) !important; }
+.bg-primary-dark       { background-color: var(--primary-dark) !important; }
+.bg-primary-light      { background-color: var(--primary-light) !important; }
+.bg-cream              { background-color: var(--cream) !important; }
+.text-primary          { color: var(--primary) !important; }
+.border-primary        { border-color: var(--primary) !important; }
+.ring-primary          { --tw-ring-color: var(--primary); }
+
+/* Hover variants */
+.hover\:bg-primary:hover          { background-color: var(--primary) !important; }
+.hover\:bg-primary-dark:hover     { background-color: var(--primary-dark) !important; }
+.hover\:bg-primary-light:hover    { background-color: var(--primary-light) !important; }
+.hover\:text-primary:hover        { color: var(--primary) !important; }
+.hover\:border-primary:hover      { border-color: var(--primary) !important; }
+.hover\:text-white:hover          { color: #fff !important; }
+
+/* Focus ring */
+.focus\:ring-primary:focus { --tw-ring-color: var(--primary); }
+
+/* ── 5. Layout Helpers ────────────────────────────────────── */
+.section    { padding: 80px 0; }
+.section-sm { padding: 48px 0; }
+
+/* ── 6. Typography Helpers ────────────────────────────────── */
+.section-label {
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 10px;
+  display: block;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+.section-desc {
+  font-size: .95rem;
+  color: var(--text-light);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ── 7. Buttons ───────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  font-family: 'Poppins', sans-serif;
+  font-size: .88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid transparent;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(184,41,47,.35);
+}
+.btn-outline {
+  background: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.btn-white {
+  background: #fff;
+  color: var(--primary);
+}
+.btn-white:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+/* ── 8. Navbar ────────────────────────────────────────────── */
+#navbar { transition: background .3s, box-shadow .3s; }
+#navbar.scrolled {
+  background: rgba(255,255,255,.97) !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,.1);
+}
+.nav-link {
+  position: relative;
+  font-size: .88rem;
+  font-weight: 500;
+  color: #333;
+  transition: color .25s;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 2px;
+  background: var(--primary);
+  transition: width .3s;
+}
+.nav-link:hover,
+.nav-link.active { color: var(--primary); }
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
+
+/* ── 9. Hero Section ──────────────────────────────────────── */
+.hero-section {
+  background-image: url('../images/homepage/hero_bg.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    rgba(255,255,255,0.95) 40%,
+    rgba(255,255,255,0.60) 65%,
+    rgba(255,255,255,0.10) 100%
+  );
+}
+
+/* ── 10. Hero Circular Frame ──────────────────────────────── */
+.hero-img-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 360px;
+  height: 360px;
+}
+@media (min-width: 1024px) {
+  .hero-img-wrapper { width: 440px; height: 440px; }
+}
+
+/* Spinning dashed outer ring */
+.hero-ring-outer {
+  position: absolute;
+  inset: -40px;
+  border-radius: 50%;
+  border: 2px dashed rgba(184,41,47,.25);
+  animation: spin-slow 18s linear infinite;
+  pointer-events: none;
+}
+/* Static middle ring */
+.hero-ring-inner {
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  border: 3px solid rgba(184,41,47,.12);
+  pointer-events: none;
+}
+/* Glow blob */
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(184,41,47,.12);
+  filter: blur(40px);
+  pointer-events: none;
+}
+/* Circular clipped photo */
+.hero-circle-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.28);
+  border: 4px solid #fff;
+  z-index: 1;
+}
+.hero-circle-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Floating badges */
+.hero-badge-bl {
+  position: absolute;
+  bottom: 10px;
+  left: -30px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0,0,0,.12);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+  white-space: nowrap;
+}
+.hero-badge-tr {
+  position: absolute;
+  top: 10px;
+  right: -20px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(184,41,47,.35);
+  padding: 10px 16px;
+  text-align: center;
+  z-index: 2;
+}
+.hero-badge-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(184,41,47,.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* ── 11. Highlight Stripe ─────────────────────────────────── */
+.highlight-stripe {
+  background: linear-gradient(90deg, var(--primary) 0%, #d93d44 100%);
+}
+
+/* Trusted Section Marquee */
+.trusted-marquee {
+  background: var(--white) !important;
+  color: var(--primary) !important;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.marquee-content {
+  display: inline-flex;
+  gap: 6rem;
+  animation: scroll-marquee 30s linear infinite;
+  padding: 1rem 0;
+}
+
+@keyframes scroll-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.1rem;
+}
+.marquee-item i {
+  font-size: 1.6rem;
+}
+
+/* ── 12. Product Carousel ─────────────────────────────────── */
+.carousel-track {
+  display: flex;
+  transition: transform .5s ease;
+}
+.product-card {
+  flex: 0 0 25%;
+  padding: 0 12px;
+  display: flex;
+}
+.product-card > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.product-card > div > .p-5 {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.product-card > div > .p-5 > a {
+  margin-top: auto;
+}
+@media (max-width: 1023px) { .product-card { flex: 0 0 50%; } }
+@media (max-width: 767px)  { .product-card { flex: 0 0 100%; } }
+.card-hover { transition: transform .3s, box-shadow .3s; }
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,.13);
+}
+
+/* ── 13. Stat Cards ───────────────────────────────────────── */
+.stat-card { transition: transform .3s, box-shadow .3s; }
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(184,41,47,.18);
+}
+
+/* ── 14. Gallery ──────────────────────────────────────────── */
+.gallery-item { overflow: hidden; cursor: pointer; }
+.gallery-item img { transition: transform .5s ease; }
+.gallery-item:hover img { transform: scale(1.07); }
+
+/* ── 15. Process Step connector line ─────────────────────── */
+.process-step { position: relative; }
+.process-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 36px; right: -50%;
+  width: 100%; height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--primary) 0, var(--primary) 8px,
+    transparent 8px, transparent 16px
+  );
+  z-index: 0;
+}
+@media (max-width: 767px) { .process-step::after { display: none; } }
+
+/* ── 16. Scroll Reveal ────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left  {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.reveal-left.visible,
+.reveal-right.visible { opacity: 1; transform: translate(0); }
+
+/* ── 17. Floating decorative icons ───────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-14px); }
+}
+.floating       { animation: float 4s ease-in-out infinite; }
+.floating-delay { animation: float 4s 1.5s ease-in-out infinite; }
+
+/* ── 18. Spinning ring ────────────────────────────────────── */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── 19. Map pin pulse ────────────────────────────────────── */
+@keyframes ping {
+  0%   { transform: scale(1);   opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+.map-pin-pulse { animation: ping 1.6s ease-out infinite; }
+
+/* ── 20. Lightbox ─────────────────────────────────────────── */
+#lightbox {
+  z-index: 9999;
+  background: rgba(0,0,0,.85);
+}
+
+/* ── 21. Shadow utilities (Tailwind v2 supplement) ────────── */
+.shadow-card { box-shadow: 0 4px 24px rgba(0,0,0,.08); }
+.shadow-hero { box-shadow: 0 20px 60px rgba(0,0,0,.25); }
+.shadow-brand{ box-shadow: 0 8px 20px rgba(184,41,47,.35); }
+
+/* ── 22. Mobile drawer ────────────────────────────────────── */
+#mobileMenu {
+  transform: translateX(100%);
+  transition: transform .3s ease;
+}
+#mobileMenu.open { transform: translateX(0); }
+
+/* ── 23. CTA Section background blob ─────────────────────── */
+.cta-blob-tr {
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 192px; height: 192px;
+  background: rgba(255,255,255,.1);
+  border-radius: 50%;
+  filter: blur(24px);
+  pointer-events: none;
+}
+.cta-blob-bl {
+  position: absolute;
+  bottom: -40px; left: -40px;
+  width: 256px; height: 256px;
+  background: rgba(255,255,255,.05);
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+/* ── 24. Footer links ─────────────────────────────────────── */
+.footer-link {
+  font-size: .7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #5a3a3a;
+  transition: color .25s;
+  display: inline-block;
+}
+.footer-link:hover { color: var(--primary); }
