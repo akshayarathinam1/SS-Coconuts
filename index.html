@@ -1,818 +1,584 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/images/logo/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SS Coconuts — India's Trusted Coconut Supplier</title>
-  <meta name="description" content="SS Coconuts — Premium coconut supplier from Tamil Nadu to global markets. Fresh, tender, and export-quality coconuts delivered across India and worldwide." />
+  <meta name="description"
+    content="SS Coconuts — Premium coconut supplier from Tamil Nadu to global markets. Fresh, tender, and export-quality coconuts delivered across India and worldwide." />
 
-  <!-- Tailwind CSS v2 CDN (pure CSS, no script) -->
+  <!-- Tailwind CSS v2 CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
-
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
   <!-- SS Coconuts Custom Styles -->
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Shared Components (navbar + footer) -->
+  <script src="assets/js/components.js" defer></script>
 </head>
+
 <body class="bg-white text-gray-800">
+<div class="page-content">
 
-<!-- ============================================================
-     NAVBAR
-============================================================ -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white" role="navigation" aria-label="Main navigation">
-  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between" style="height:68px;">
-
-    <!-- Logo -->
-    <a href="index.html" class="flex items-center" id="logoLink">
-      <img src="assets/images/logo/logo.png" alt="SS Coconuts Logo" class="h-12 w-auto object-contain" />
-    </a>
-
-    <!-- Desktop Menu -->
-    <ul class="hidden lg:flex items-center gap-8">
-      <li><a href="#home"     class="nav-link" id="navHome">Home</a></li>
-      <li><a href="#about"    class="nav-link" id="navAbout">About</a></li>
-      <li><a href="#products" class="nav-link" id="navProducts">Products</a></li>
-      <li><a href="pages/contact.html" class="nav-link" id="navContact">Contact Us</a></li>
-    </ul>
-
-    <!-- CTA + Hamburger -->
-    <div class="flex items-center gap-3">
-      <a href="#contact-cta" id="navCta"
-         class="hidden md:inline-flex btn btn-primary text-sm rounded-md" style="padding:10px 20px;">
-        <i class="fa-solid fa-paper-plane" style="font-size:11px;"></i> Get a Quote
-      </a>
-      <button id="menuBtn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors" aria-label="Open menu">
-        <i class="fa-solid fa-bars text-gray-700 text-xl"></i>
-      </button>
-    </div>
-  </div>
-</nav>
-
-<!-- Mobile Drawer -->
-<div id="mobileMenu" class="fixed inset-y-0 right-0 w-72 bg-white z-50 shadow-2xl" role="dialog" aria-label="Mobile menu">
-  <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
-    <span class="font-bold text-gray-900">Menu</span>
-    <button id="closeMenu" class="p-2 hover:bg-gray-100 rounded-md" aria-label="Close menu">
-      <i class="fa-solid fa-xmark text-gray-600 text-xl"></i>
-    </button>
-  </div>
-  <ul class="flex flex-col px-6 py-6 gap-5">
-    <li><a href="#home"     class="font-medium text-gray-700 hover:text-primary transition-colors">Home</a></li>
-    <li><a href="#about"    class="font-medium text-gray-700 hover:text-primary transition-colors">About</a></li>
-    <li><a href="#products" class="font-medium text-gray-700 hover:text-primary transition-colors">Products</a></li>
-    <li><a href="pages/contact.html" class="font-medium text-gray-700 hover:text-primary transition-colors">Contact Us</a></li>
-    <li class="pt-2">
-      <a href="#contact-cta" class="btn btn-primary w-full justify-center rounded-md">Get a Quote</a>
-    </li>
-  </ul>
-</div>
+  <!-- Navbar injected by components.js -->
 
 
-<!-- ============================================================
+  <!-- ============================================================
      HERO — background set via .hero-section in styles.css
 ============================================================ -->
-<section id="home" class="hero-section pt-16">
+  <section id="home" class="hero-section pt-16">
 
-  <!-- Floating bg icons -->
-  <img src="assets/images/homepage/bg-icon1.png" alt=""
-       class="floating absolute hidden lg:block opacity-25 pointer-events-none"
-       style="top:110px; right:7%; width:88px;" aria-hidden="true" />
-  <img src="assets/images/homepage/bg-icon2.png" alt=""
-       class="floating-delay absolute hidden lg:block opacity-20 pointer-events-none"
-       style="bottom:90px; left:5%; width:60px;" aria-hidden="true" />
+    <!-- Floating bg icons -->
+    <img src="assets/images/homepage/bg-icon1.png" alt=""
+      class="floating absolute hidden lg:block opacity-25 pointer-events-none" style="top:110px; right:7%; width:88px;"
+      aria-hidden="true" />
+    <img src="assets/images/homepage/bg-icon2.png" alt=""
+      class="floating-delay absolute hidden lg:block opacity-20 pointer-events-none"
+      style="bottom:90px; left:5%; width:60px;" aria-hidden="true" />
 
-  <div class="relative z-10 max-w-7xl mx-auto px-6 w-full py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 w-full py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-    <!-- Left — copy -->
-    <div class="reveal-left visible">
+      <!-- Left — copy -->
+      <div class="reveal-left visible">
 
-      <span class="inline-flex items-center gap-2 bg-primary-light text-primary font-semibold uppercase px-4 py-2 rounded-full mb-5"
-            style="font-size:11px; letter-spacing:.08em;">
-        <i class="fa-solid fa-leaf" style="font-size:10px;"></i> India's Trusted Coconut Supplier
-      </span>
+        <span
+          class="inline-flex items-center gap-2 bg-primary-light text-primary font-semibold uppercase px-4 py-2 rounded-full mb-5"
+          style="font-size:11px; letter-spacing:.08em;">
+          <i class="fa-solid fa-leaf" style="font-size:10px;"></i> India's Trusted Coconut Supplier
+        </span>
 
-      <h1 class="font-extrabold text-gray-900 leading-tight mb-3" style="font-size:clamp(2rem,5vw,3.5rem);">
-        India's Trusted<br />
-        <span class="text-primary">Coconut Supplier</span>
-      </h1>
-      <p class="font-medium text-black mb-2">From Tamil Nadu to Global Markets</p>
-      <p class="text-sm text-black leading-relaxed mb-8" style="max-width:440px;">
-        We supply premium quality coconuts — fresh, tender, and export-grade — sourced directly from
-        the lush farms of Tamil Nadu. Trusted by retailers, exporters, and households across India.
-      </p>
+        <h1 class="font-extrabold text-gray-900 leading-tight mb-3" style="font-size:clamp(2rem,5vw,3.5rem);">
+          India's Trusted<br />
+          <span class="text-primary">Coconut Supplier</span>
+        </h1>
+        <p class="font-medium text-black mb-2">From Tamil Nadu to Global Markets</p>
+        <p class="text-sm text-black leading-relaxed mb-8" style="max-width:440px;">
+          We supply premium quality coconuts — fresh, tender, and export-grade — sourced directly from
+          the lush farms of Tamil Nadu. Trusted by retailers, exporters, and households across India.
+        </p>
 
-      <div class="flex flex-wrap gap-4 mb-10">
-        <a href="#contact-cta" id="heroQuoteBtn" class="btn btn-primary rounded-md shadow-brand" style="opacity:0.75;">
-          <i class="fa-solid fa-paper-plane" style="font-size:11px;"></i> Request a Quote
-        </a>
-        <a href="#products" id="heroRangeBtn" class="btn btn-outline rounded-md">
-          <i class="fa-solid fa-box-open" style="font-size:11px;"></i> View Our Range
-        </a>
+        <div class="flex flex-wrap gap-4 mb-10">
+          <a href="contact.html" id="heroQuoteBtn" class="btn btn-primary rounded-md shadow-brand">
+            <i class="fa-solid fa-phone" style="font-size:13px;"></i> Talk to Us
+          </a>
+          <a href="products.html" id="heroRangeBtn" class="btn btn-outline rounded-md">
+            View Our Range <i class="fa-solid fa-arrow-right-long" style="font-size:13px;"></i>
+          </a>
+        </div>
+
+      
+       
+
       </div>
 
+      <!-- Right — circular image frame -->
+      <div class="reveal-right visible flex justify-center lg:justify-end">
+        <div class="hero-img-wrapper">
+          <div class="hero-ring-outer"></div>
+          <div class="hero-ring-inner"></div>
+          <div class="hero-glow"></div>
 
-    </div>
-
-    <!-- Right — circular image frame -->
-    <div class="reveal-right visible flex justify-center lg:justify-end">
-      <div class="hero-img-wrapper">
-        <div class="hero-ring-outer"></div>
-        <div class="hero-ring-inner"></div>
-        <div class="hero-glow"></div>
-
-        <div class="hero-circle-img">
-          <img src="assets/images/homepage/hero-img.jpg" alt="Fresh quality coconuts from Tamil Nadu" />
-        </div>
-
-        <!-- Badge — bottom left -->
-        <div class="hero-badge-bl">
-          <div class="hero-badge-icon">
-            <i class="fa-solid fa-certificate"></i>
+          <div class="hero-circle-img">
+            <img src="assets/images/homepage/hero-img.jpg" alt="Fresh quality coconuts from Tamil Nadu" />
           </div>
-          <div>
-            <p class="font-medium text-gray-500" style="font-size:10px;">Certified Quality</p>
-            <p class="font-bold text-gray-900 text-xs">FSSAI Approved</p>
-          </div>
-        </div>
-
-        <!-- Badge — top right -->
-        <div class="hero-badge-tr">
-          <p class="text-xl font-extrabold leading-none">100%</p>
-          <p class="font-semibold uppercase" style="font-size:9px; letter-spacing:.1em;">Natural</p>
         </div>
       </div>
     </div>
 
-  </div>
-</section>
+
+  </section>
 
 
-<!-- ============================================================
+  <!-- ============================================================
      HIGHLIGHT STRIPE
 ============================================================ -->
-<div class="trusted-marquee py-3">
-  <div class="marquee-content">
-    <!-- Set 1 -->
-    <span class="marquee-item"><i class="fa-regular fa-calendar"></i>&nbsp; 30 Years in Coconut Trading</span>
-    <span class="marquee-item" style="opacity:.4;">✦</span>
-    <span class="marquee-item"><i class="fa-solid fa-location-dot"></i>&nbsp; Pan-India Supply Network</span>
-    <span class="marquee-item" style="opacity:.4;">✦</span>
-    <span class="marquee-item"><i class="fa-solid fa-globe"></i>&nbsp; Middle East Export Reach</span>
-    <span class="marquee-item" style="opacity:.4;">✦</span>
-    <span class="marquee-item"><i class="fa-solid fa-warehouse"></i>&nbsp; Consistent Bulk Supply Capacity</span>
-    <span class="marquee-item" style="opacity:.4;">✦</span>
-    <!-- Set 2 (duplicate for seamless loop) -->
-    <span class="marquee-item"><i class="fa-regular fa-calendar"></i>&nbsp; 30 Years in Coconut Trading</span>
-    <span class="marquee-item" style="opacity:.4;">✦</span>
-    <span class="marquee-item"><i class="fa-solid fa-location-dot"></i>&nbsp; Pan-India Supply Network</span>
-    <span class="marquee-item" style="opacity:.4;">✦</span>
-    <span class="marquee-item"><i class="fa-solid fa-globe"></i>&nbsp; Middle East Export Reach</span>
-    <span class="marquee-item" style="opacity:.4;">✦</span>
-    <span class="marquee-item"><i class="fa-solid fa-warehouse"></i>&nbsp; Consistent Bulk Supply Capacity</span>
-    <span class="marquee-item" style="opacity:.4;">✦</span>
+  <div class="trusted-marquee py-3">
+    <div class="marquee-content">
+      <!-- Set 1 -->
+      <span class="marquee-item"><i class="fa-regular fa-calendar"></i>&nbsp; 30 Years in Coconut Trading</span>
+      <span class="marquee-item" style="opacity:.4;">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-location-dot"></i>&nbsp; Pan-India Supply Network</span>
+      <span class="marquee-item" style="opacity:.4;">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-globe"></i>&nbsp; Middle East Export Reach</span>
+      <span class="marquee-item" style="opacity:.4;">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-warehouse"></i>&nbsp; Consistent Bulk Supply Capacity</span>
+      <span class="marquee-item" style="opacity:.4;">✦</span>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <span class="marquee-item"><i class="fa-regular fa-calendar"></i>&nbsp; 30 Years in Coconut Trading</span>
+      <span class="marquee-item" style="opacity:.4;">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-location-dot"></i>&nbsp; Pan-India Supply Network</span>
+      <span class="marquee-item" style="opacity:.4;">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-globe"></i>&nbsp; Middle East Export Reach</span>
+      <span class="marquee-item" style="opacity:.4;">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-warehouse"></i>&nbsp; Consistent Bulk Supply Capacity</span>
+      <span class="marquee-item" style="opacity:.4;">✦</span>
+    </div>
   </div>
-</div>
 
 
-<!-- ============================================================
+  <!-- ============================================================
      OUR COCONUT RANGE — Carousel
 ============================================================ -->
-<section id="products" class="section bg-cream">
-  <div class="max-w-7xl mx-auto px-6">
+  <section id="products" class="section bg-cream">
+    <div class="max-w-7xl mx-auto px-6">
 
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 reveal">
-      <div>
-        <span class="section-label">What We Offer</span>
-        <h2 class="section-title">Our Coconut Range</h2>
-        <p class="section-desc text-sm text-gray-500">
-          From fresh tender coconuts to export-quality mature ones — we have the right variety for every need.
-        </p>
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 reveal visible">
+        <div>
+          <span class="section-label">What We Offer</span>
+          <h2 class="section-title">Our Coconut Range</h2>
+          <p class="section-desc text-sm text-gray-500">
+            From fresh tender coconuts to export-quality mature ones — we have the right variety for every need.
+          </p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="prevBtn" aria-label="Previous"
+            class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-colors">
+            <i class="fa-solid fa-chevron-left text-xs"></i>
+          </button>
+          <button id="nextBtn" aria-label="Next"
+            class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-dark transition-colors">
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+          </button>
+        </div>
       </div>
-      <div class="flex items-center gap-2">
-        <button id="prevBtn" aria-label="Previous"
-                class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-colors">
-          <i class="fa-solid fa-chevron-left text-xs"></i>
-        </button>
-        <button id="nextBtn" aria-label="Next"
-                class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-dark transition-colors">
-          <i class="fa-solid fa-chevron-right text-xs"></i>
-        </button>
-      </div>
-    </div>
 
-    <div class="overflow-hidden">
-      <div id="productTrack" class="carousel-track">
+      <div class="overflow-hidden">
+        <div id="productTrack" class="carousel-track">
 
-        <!-- Card 1 -->
-        <div class="product-card">
-          <div class="bg-white rounded-2xl shadow-card overflow-hidden card-hover">
-            <div class="relative overflow-hidden h-48">
-              <img src="assets/images/products/product-img1.jpg" alt="Pollachi Coconut"
-                   class="w-full h-full object-cover" />
-              <span class="absolute top-3 left-3 bg-primary text-white font-bold rounded-full uppercase"
-                    style="font-size:9px; padding:3px 10px; letter-spacing:.06em;">Bestseller</span>
-            </div>
-            <div class="p-5">
-              <h3 class="font-bold text-gray-900 mb-1">Pollachi Coconut</h3>
-              <p class="text-xs text-gray-500 leading-relaxed mb-4">
-                Premium grade coconuts sourced from the famous farms of Pollachi, known for their large size and sweet water.
-              </p>
-              <a href="#contact-cta" class="inline-flex items-center gap-2 text-primary font-semibold" style="font-size:12px;">
-                Enquire Now <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i>
-              </a>
+          <!-- Card 1 -->
+          <div class="product-card">
+            <div class="bg-white rounded-2xl shadow-card overflow-hidden card-hover">
+              <div class="relative overflow-hidden h-48">
+                <img src="assets/images/products/product-img1.jpg" alt="Pollachi Coconut"
+                  class="w-full h-full object-cover" />
+                <span class="absolute top-3 left-3 bg-primary text-white font-bold rounded-full uppercase"
+                  style="font-size:9px; padding:3px 10px; letter-spacing:.06em;">Bestseller</span>
+              </div>
+              <div class="p-5">
+                <h3 class="font-bold text-gray-900 mb-1">Pollachi Coconut</h3>
+                <p class="text-xs text-gray-500 leading-relaxed mb-4">
+                  Premium grade coconuts sourced from the famous farms of Pollachi, known for their large size and sweet
+                  water.
+                </p>
+                <a href="#contact-cta" class="inline-flex items-center gap-2 text-primary font-semibold"
+                  style="font-size:12px;">
+                  Enquire Now <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i>
+                </a>
+              </div>
             </div>
           </div>
+
+          <!-- Card 2 -->
+          <div class="product-card">
+            <div class="bg-white rounded-2xl shadow-card overflow-hidden card-hover">
+              <div class="relative overflow-hidden h-48 bg-green-50">
+                <img src="assets/images/products/product-img2.png" alt="Semi Husked Coconut"
+                  class="w-full h-full object-cover" />
+              </div>
+              <div class="p-5">
+                <h3 class="font-bold text-gray-900 mb-1">Semi Husked Coconut</h3>
+                <p class="text-xs text-gray-500 leading-relaxed mb-4">
+                  Partially husked coconuts ideal for traditional use, popular with households, temples, and local
+                  markets.
+                </p>
+                <a href="#contact-cta" class="inline-flex items-center gap-2 text-primary font-semibold"
+                  style="font-size:12px;">
+                  Enquire Now <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="product-card">
+            <div class="bg-white rounded-2xl shadow-card overflow-hidden card-hover">
+              <div class="relative overflow-hidden h-48 bg-green-50">
+                <img src="assets/images/products/product-img3.png" alt="Brown Fresh Coconut"
+                  class="w-full h-full object-cover" />
+              </div>
+              <div class="p-5">
+                <h3 class="font-bold text-gray-900 mb-1">Brown Fresh Coconut</h3>
+                <p class="text-xs text-gray-500 leading-relaxed mb-4">
+                  Fully matured, fresh brown coconuts packed with rich meat, perfect for culinary uses and oil
+                  extraction.
+                </p>
+                <a href="#contact-cta" class="inline-flex items-center gap-2 text-primary font-semibold"
+                  style="font-size:12px;">
+                  Enquire Now <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="product-card">
+            <div class="bg-white rounded-2xl shadow-card overflow-hidden card-hover">
+              <div class="relative overflow-hidden h-48 bg-yellow-50">
+                <img src="assets/images/products/product-img4.png" alt="Peravurani Coconut"
+                  class="w-full h-full object-cover" />
+                <span class="absolute top-3 left-3 bg-green-600 text-white font-bold rounded-full uppercase"
+                  style="font-size:9px; padding:3px 10px;">Fresh</span>
+              </div>
+              <div class="p-5">
+                <h3 class="font-bold text-gray-900 mb-1">Peravurani Coconut</h3>
+                <p class="text-xs text-gray-500 leading-relaxed mb-4">
+                  High-quality coconuts from the Peravurani region, celebrated for their thick kernel, rich taste and
+                  extended shelf life.
+                </p>
+                <a href="#contact-cta" class="inline-flex items-center gap-2 text-primary font-semibold"
+                  style="font-size:12px;">
+                  Enquire Now <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="product-card">
+            <div class="bg-white rounded-2xl shadow-card overflow-hidden card-hover">
+              <div class="relative overflow-hidden h-48">
+                <img src="assets/images/products/product-img5.jpg" alt="Export Semi Husked Coconut"
+                  class="w-full h-full object-cover" />
+                <span class="absolute top-3 left-3 bg-blue-600 text-white font-bold rounded-full uppercase"
+                  style="font-size:9px; padding:3px 10px;">Export</span>
+              </div>
+              <div class="p-5">
+                <h3 class="font-bold text-gray-900 mb-1">Export Semi Husked Coconut</h3>
+                <p class="text-xs text-gray-500 leading-relaxed mb-4">
+                  Stringently graded and packed semi-husked coconuts meeting full international phytosanitary export
+                  standards.
+                </p>
+                <a href="#contact-cta" class="inline-flex items-center gap-2 text-primary font-semibold"
+                  style="font-size:12px;">
+                  Enquire Now <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- Carousel position indicator -->
+      <div id="carouselDots" class="flex justify-center gap-2 mt-6" aria-label="Carousel position"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     ABOUT / HERITAGE
+============================================================ -->
+  <section id="about" class="bg-white">
+
+   
+
+    <!-- ── Main Content Grid ────────────────────────────────── -->
+    <div class="section max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+
+      <!-- Image -->
+      <div class="reveal-left visible h-full">
+        <div class="relative h-full">
+          <img src="assets/images/about/aboutimg.png" alt="Coconut farm in Tamil Nadu"
+            class="w-full h-full object-cover rounded-3xl shadow-xl about-img" />
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="reveal-right visible">
+        <span class="section-label">About SS Coconuts</span>
+        <h2 class="section-title">Our Heritage of Excellence</h2>
+        <p class="text-sm text-gray-500 leading-relaxed mb-5">
+          Founded in 1989 in the heart of Tamil Nadu, SS Coconuts began as a small family-run farm
+          with a commitment to delivering the finest coconuts. Over three decades, we have grown into
+          one of India's most reliable coconut suppliers, serving clients across 50+ districts and
+          exporting to 10+ countries.
+        </p>
+        <p class="text-sm text-gray-500 leading-relaxed mb-8">
+          After harnessing the best growing conditions Tamil Nadu has to offer, our coconuts are
+          carefully harvested, graded, and dispatched with the highest quality standards — from
+          farm to your doorstep.
+        </p>
+        <a href="contact.html" class="btn btn-primary rounded-md inline-flex items-center gap-2" style="padding:12px 24px;">
+          Read More <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i>
+        </a>
+
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+     WHY CHOOSE US
+============================================================ -->
+  <section id="why-us" class="relative bg-white pt-24 pb-20">
+    
+    <!-- Image Background -->
+    <div class="absolute top-0 left-0 w-full" style="height: 480px;">
+      <img src="assets/images/homepage/whychooseus_bg.jpg" alt="Why Choose SS Coconuts" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+      
+      <!-- Text Content -->
+      <div class="text-center pt-8" style="padding-bottom: 120px;">
+        <p class="text-white text-xs font-bold tracking-widest uppercase mb-4" style="letter-spacing: 0.15em;">Why Choose Us</p>
+        <h2 class="text-white font-extrabold drop-shadow-lg" style="font-size:clamp(1.8rem, 4vw, 3.2rem); line-height: 1.25;">
+          Why We're the Right<br/>Choice for Quality Coconuts
+        </h2>
+      </div>
+
+      <!-- Cards Area -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl p-10 flex flex-col border-b-4 transition-transform hover:-translate-y-1" style="box-shadow: 0 15px 40px rgba(0,0,0,0.08); border-bottom-color: var(--primary);">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-gray-50 border border-gray-100">
+            <i class="fa-solid fa-certificate text-primary text-xl"></i>
+          </div>
+          <h3 class="text-gray-900 font-extrabold text-xl mb-3">Consistent Quality</h3>
+          <p class="text-gray-500 text-base leading-relaxed">Carefully selected coconuts for reliable supply.</p>
         </div>
 
         <!-- Card 2 -->
-        <div class="product-card">
-          <div class="bg-white rounded-2xl shadow-card overflow-hidden card-hover">
-            <div class="relative overflow-hidden h-48 bg-green-50">
-              <img src="assets/images/products/product-img2.png" alt="Semi Husked Coconut"
-                   class="w-full h-full object-cover" />
-            </div>
-            <div class="p-5">
-              <h3 class="font-bold text-gray-900 mb-1">Semi Husked Coconut</h3>
-              <p class="text-xs text-gray-500 leading-relaxed mb-4">
-                Partially husked coconuts ideal for traditional use, popular with households, temples, and local markets.
-              </p>
-              <a href="#contact-cta" class="inline-flex items-center gap-2 text-primary font-semibold" style="font-size:12px;">
-                Enquire Now <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i>
-              </a>
-            </div>
+        <div class="bg-white rounded-xl p-10 flex flex-col border-b-4 transition-transform hover:-translate-y-1" style="box-shadow: 0 15px 40px rgba(0,0,0,0.08); border-bottom-color: var(--primary);">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-gray-50 border border-gray-100">
+            <i class="fa-solid fa-box-open text-primary text-xl"></i>
           </div>
+          <h3 class="text-gray-900 font-extrabold text-xl mb-3">Bulk Supply Capability</h3>
+          <p class="text-gray-500 text-base leading-relaxed">Ready to handle regular and large orders.</p>
         </div>
 
         <!-- Card 3 -->
-        <div class="product-card">
-          <div class="bg-white rounded-2xl shadow-card overflow-hidden card-hover">
-            <div class="relative overflow-hidden h-48 bg-green-50">
-              <img src="assets/images/products/product-img3.png" alt="Brown Fresh Coconut"
-                   class="w-full h-full object-cover" />
-            </div>
-            <div class="p-5">
-              <h3 class="font-bold text-gray-900 mb-1">Brown Fresh Coconut</h3>
-              <p class="text-xs text-gray-500 leading-relaxed mb-4">
-                Fully matured, fresh brown coconuts packed with rich meat, perfect for culinary uses and oil extraction.
-              </p>
-              <a href="#contact-cta" class="inline-flex items-center gap-2 text-primary font-semibold" style="font-size:12px;">
-                Enquire Now <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i>
-              </a>
-            </div>
+        <div class="bg-white rounded-xl p-10 flex flex-col border-b-4 transition-transform hover:-translate-y-1" style="box-shadow: 0 15px 40px rgba(0,0,0,0.08); border-bottom-color: var(--primary);">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-gray-50 border border-gray-100">
+            <i class="fa-solid fa-truck-fast text-primary text-xl"></i>
           </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="product-card">
-          <div class="bg-white rounded-2xl shadow-card overflow-hidden card-hover">
-            <div class="relative overflow-hidden h-48 bg-yellow-50">
-              <img src="assets/images/products/product-img4.png" alt="Peravurani Coconut"
-                   class="w-full h-full object-cover" />
-              <span class="absolute top-3 left-3 bg-green-600 text-white font-bold rounded-full uppercase"
-                    style="font-size:9px; padding:3px 10px;">Fresh</span>
-            </div>
-            <div class="p-5">
-              <h3 class="font-bold text-gray-900 mb-1">Peravurani Coconut</h3>
-              <p class="text-xs text-gray-500 leading-relaxed mb-4">
-                High-quality coconuts from the Peravurani region, celebrated for their thick kernel, rich taste and extended shelf life.
-              </p>
-              <a href="#contact-cta" class="inline-flex items-center gap-2 text-primary font-semibold" style="font-size:12px;">
-                Enquire Now <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="product-card">
-          <div class="bg-white rounded-2xl shadow-card overflow-hidden card-hover">
-            <div class="relative overflow-hidden h-48">
-              <img src="assets/images/products/product-img5.jpg" alt="Export Semi Husked Coconut"
-                   class="w-full h-full object-cover" />
-              <span class="absolute top-3 left-3 bg-blue-600 text-white font-bold rounded-full uppercase"
-                    style="font-size:9px; padding:3px 10px;">Export</span>
-            </div>
-            <div class="p-5">
-              <h3 class="font-bold text-gray-900 mb-1">Export Semi Husked Coconut</h3>
-              <p class="text-xs text-gray-500 leading-relaxed mb-4">
-                Stringently graded and packed semi-husked coconuts meeting full international phytosanitary export standards.
-              </p>
-              <a href="#contact-cta" class="inline-flex items-center gap-2 text-primary font-semibold" style="font-size:12px;">
-                Enquire Now <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i>
-              </a>
-            </div>
-          </div>
+          <h3 class="text-gray-900 font-extrabold text-xl mb-3">Export-Ready Standards</h3>
+          <p class="text-gray-500 text-base leading-relaxed">Packed and managed for domestic and overseas buyers.</p>
         </div>
 
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- ============================================================
-     ABOUT / HERITAGE
-============================================================ -->
-<section id="about" class="section bg-white">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-
-    <!-- Image -->
-    <div class="reveal-left">
-      <div class="relative">
-        <img src="assets/images/homepage/hero_bg.png" alt="Coconut farm in Tamil Nadu"
-             class="w-full object-cover rounded-3xl shadow-xl" style="height:420px;" />
-        <div class="absolute bg-white rounded-2xl shadow-lg p-5" style="bottom:-24px; right:-24px; max-width:200px;">
-          <p class="text-3xl font-extrabold text-primary mb-1">1989</p>
-          <p class="text-xs text-gray-500 font-medium leading-snug">Established with a passion for quality coconuts</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Text -->
-    <div class="reveal-right">
-      <span class="section-label">Our Story</span>
-      <h2 class="section-title">Our Heritage of Excellence</h2>
-      <p class="text-sm text-gray-500 leading-relaxed mb-5">
-        Founded in 1989 in the heart of Tamil Nadu, SS Coconuts began as a small family-run farm
-        with a commitment to delivering the finest coconuts. Over three decades, we have grown into
-        one of India's most reliable coconut suppliers, serving clients across 50+ districts and
-        exporting to 10+ countries.
-      </p>
-      <p class="text-sm text-gray-500 leading-relaxed mb-8">
-        After harnessing the best growing conditions Tamil Nadu has to offer, our coconuts are
-        carefully harvested, graded, and dispatched with the highest quality standards — from
-        farm to your doorstep.
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div class="flex items-start gap-3">
-          <div class="w-9 h-9 rounded-full bg-primary-light flex items-center justify-center flex-shrink-0 mt-1">
-            <i class="fa-solid fa-check text-primary text-xs"></i>
-          </div>
-          <div>
-            <p class="font-semibold text-gray-800 text-sm">Farm-to-Market Direct</p>
-            <p class="text-xs text-gray-500">No middlemen — direct sourcing from partner farms.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-3">
-          <div class="w-9 h-9 rounded-full bg-primary-light flex items-center justify-center flex-shrink-0 mt-1">
-            <i class="fa-solid fa-check text-primary text-xs"></i>
-          </div>
-          <div>
-            <p class="font-semibold text-gray-800 text-sm">Rigorous Quality Checks</p>
-            <p class="text-xs text-gray-500">Every batch tested for size, weight, and freshness.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-3">
-          <div class="w-9 h-9 rounded-full bg-primary-light flex items-center justify-center flex-shrink-0 mt-1">
-            <i class="fa-solid fa-check text-primary text-xs"></i>
-          </div>
-          <div>
-            <p class="font-semibold text-gray-800 text-sm">Timely Deliveries</p>
-            <p class="text-xs text-gray-500">On-time dispatch with cold chain logistics.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-3">
-          <div class="w-9 h-9 rounded-full bg-primary-light flex items-center justify-center flex-shrink-0 mt-1">
-            <i class="fa-solid fa-check text-primary text-xs"></i>
-          </div>
-          <div>
-            <p class="font-semibold text-gray-800 text-sm">Certified &amp; Compliant</p>
-            <p class="text-xs text-gray-500">FSSAI, APEDA, and phytosanitary certifications.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     WHY CHOOSE US
-============================================================ -->
-<section id="why-us" class="section" style="background:linear-gradient(180deg,#1a1a1a 0%,#2d1a17 100%);">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-
-    <div class="reveal mb-12">
-      <p class="section-label">Our Advantages</p>
-      <h2 class="font-extrabold text-white mb-4" style="font-size:clamp(1.6rem,4vw,2.5rem);">
-        Why You Should<br /><span class="text-primary">Choose Quality Coconuts</span>
-      </h2>
-      <p class="text-gray-400 text-sm mx-auto" style="max-width:480px;">
-        We don't just sell coconuts — we deliver reliability, consistency, and trust with every shipment.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
-
-      <div class="stat-card rounded-2xl p-7 text-left" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(184,41,47,.2);">
-          <i class="fa-solid fa-shield-halved text-primary text-xl"></i>
-        </div>
-        <h3 class="text-white font-bold text-base mb-2">Consistent Quality</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">Every coconut undergoes strict size, weight, and moisture grading before dispatch — guaranteed consistency in every crate.</p>
-      </div>
-
-      <div class="stat-card rounded-2xl p-7 text-left" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(184,41,47,.2);">
-          <i class="fa-solid fa-boxes-stacked text-primary text-xl"></i>
-        </div>
-        <h3 class="text-white font-bold text-base mb-2">High Supply Capacity</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">With access to 500+ acres of farmland and a network of partner farms, we can fulfil large-volume orders without delays.</p>
-      </div>
-
-      <div class="stat-card rounded-2xl p-7 text-left" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(184,41,47,.2);">
-          <i class="fa-solid fa-globe text-primary text-xl"></i>
-        </div>
-        <h3 class="text-white font-bold text-base mb-2">Global Export Reach</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">Fully compliant with international phytosanitary norms. We export to the UAE, Malaysia, Sri Lanka, and European markets.</p>
-      </div>
-
-      <div class="stat-card rounded-2xl p-7 text-left" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(184,41,47,.2);">
-          <i class="fa-solid fa-truck-fast text-primary text-xl"></i>
-        </div>
-        <h3 class="text-white font-bold text-base mb-2">Reliable Logistics</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">From cold chain packaging to last-mile delivery, we ensure your order arrives fresh and on time — every single time.</p>
-      </div>
-
-      <div class="stat-card rounded-2xl p-7 text-left" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(184,41,47,.2);">
-          <i class="fa-solid fa-handshake text-primary text-xl"></i>
-        </div>
-        <h3 class="text-white font-bold text-base mb-2">Dedicated Support</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">A dedicated account manager for each client. We handle documentation, shipping coordination, and post-delivery queries.</p>
-      </div>
-
-      <div class="stat-card rounded-2xl p-7 text-left" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(184,41,47,.2);">
-          <i class="fa-solid fa-leaf text-primary text-xl"></i>
-        </div>
-        <h3 class="text-white font-bold text-base mb-2">Eco-Conscious Practices</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">Sustainable farming, minimal pesticide use, and biodegradable packaging — we care for the environment as much as quality.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
+  <!-- ============================================================
      SUPPLY MAP
 ============================================================ -->
-<section id="supply" class="section bg-cream">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <div class="reveal mb-10">
-      <span class="section-label">Our Reach</span>
-      <h2 class="section-title">Supplying Across India and Beyond</h2>
-      <p class="section-desc text-sm text-gray-500 mx-auto">
-        From Tamil Nadu's farms to your city — we deliver across all major states and export worldwide.
-      </p>
-    </div>
-
-    <div class="reveal bg-white rounded-3xl shadow-card p-6 lg:p-10 max-w-3xl mx-auto">
-      <div class="w-full rounded-2xl flex items-center justify-center relative overflow-hidden bg-yellow-50" style="height:280px;">
-        <img src="assets/images/homepage/hero_bg.png" alt=""
-             class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none" aria-hidden="true" />
-
-        <!-- Map pin -->
-        <div class="relative z-10 flex flex-col items-center">
-          <div class="relative" style="width:20px; height:20px;">
-            <div class="w-5 h-5 rounded-full bg-primary map-pin-pulse absolute inset-0" style="opacity:.3;"></div>
-            <div class="w-4 h-4 rounded-full bg-primary border-2 border-white shadow-md absolute" style="top:2px; left:2px; z-index:1;"></div>
-          </div>
-          <span class="mt-2 text-xs font-bold text-primary bg-white px-2 py-1 rounded-full shadow-sm">Tamil Nadu</span>
-        </div>
-
-        <!-- Spinning reach rings -->
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div class="rounded-full border-2 border-dashed" style="width:220px; height:220px; border-color:rgba(184,41,47,.2); animation:spin-slow 20s linear infinite;"></div>
-          <div class="absolute rounded-full border" style="width:320px; height:320px; border-color:rgba(184,41,47,.1); animation:spin-slow 35s linear infinite reverse;"></div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-        <div class="text-center">
-          <div class="w-8 h-8 rounded-full bg-primary-light flex items-center justify-center mx-auto mb-2">
-            <i class="fa-solid fa-location-dot text-primary text-sm"></i>
-          </div>
-          <p class="text-xs font-bold text-gray-800">Pan-India</p>
-          <p class="text-gray-500" style="font-size:10px;">50+ Districts</p>
-        </div>
-        <div class="text-center">
-          <div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-2">
-            <i class="fa-solid fa-plane text-blue-500 text-sm"></i>
-          </div>
-          <p class="text-xs font-bold text-gray-800">Middle East</p>
-          <p class="text-gray-500" style="font-size:10px;">UAE, Qatar, Kuwait</p>
-        </div>
-        <div class="text-center">
-          <div class="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-2">
-            <i class="fa-solid fa-ship text-green-500 text-sm"></i>
-          </div>
-          <p class="text-xs font-bold text-gray-800">South-East Asia</p>
-          <p class="text-gray-500" style="font-size:10px;">Malaysia, Sri Lanka</p>
-        </div>
-        <div class="text-center">
-          <div class="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center mx-auto mb-2">
-            <i class="fa-solid fa-earth-europe text-purple-500 text-sm"></i>
-          </div>
-          <p class="text-xs font-bold text-gray-800">Europe</p>
-          <p class="text-gray-500" style="font-size:10px;">Germany, France, UK</p>
-        </div>
+  <section id="supply" class="bg-white pt-16 pb-10">
+    <div class="text-center mb-10 px-6">
+      <div class="reveal visible">
+        <span class="section-label">Our Reach</span>
+        <h2 class="section-title">Supplying Across India and Beyond</h2>
+        <!-- <p class="section-desc mx-auto" style="max-width:480px;">From Tamil Nadu’s heartland to retailers, exporters, and distributors across India and the Middle East.</p> -->
       </div>
     </div>
-  </div>
-</section>
+    <div class="w-full reveal visible">
+      <img src="assets/images/homepage/supplyimage.png" alt="Supply Map" class="w-full h-auto object-contain" />
+    </div>
+  </section>
 
 
-<!-- ============================================================
+  <!-- ============================================================
      GALLERY
 ============================================================ -->
-<section id="gallery" class="section bg-white">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="flex items-end justify-between mb-10 reveal">
-      <div>
-        <span class="section-label">Visual Tour</span>
-        <h2 class="section-title">Our Gallery</h2>
+  <section id="gallery" class="section bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-end justify-between mb-10 reveal visible">
+        <div>
+          <span class="section-label">Visual Tour</span>
+          <h2 class="section-title">Our Gallery</h2>
+        </div>
+        <div class="flex items-center gap-3">
+          <button id="galleryPrev" aria-label="Previous"
+            class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-colors">
+            <i class="fa-solid fa-chevron-left text-xs"></i>
+          </button>
+          <button id="galleryNext" aria-label="Next"
+            class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-dark transition-colors">
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+          </button>
+        </div>
       </div>
-      <div class="flex items-center gap-2">
-        <span class="text-xs text-gray-400 font-medium">Click to enlarge</span>
-        <div class="w-8 h-8 rounded-full bg-primary-light flex items-center justify-center">
-          <i class="fa-solid fa-expand text-primary text-sm"></i>
+
+      <!-- Horizontal scroll gallery -->
+      <div class="overflow-hidden reveal visible">
+        <div id="galleryTrack" class="flex gap-4 transition-transform duration-500 ease-in-out">
+          <div class="gallery-item rounded-2xl shadow-card flex-none" id="gal1" style="width:360px;">
+            <img src="assets/images/gallery/gallery-image1.jpg" alt="Coconut farm"
+              class="w-full object-cover rounded-2xl" style="height:260px;" />
+          </div>
+          <div class="gallery-item rounded-2xl shadow-card flex-none" id="gal2" style="width:360px;">
+            <img src="assets/images/gallery/gallery-image2.jpg" alt="Coconut harvest"
+              class="w-full object-cover rounded-2xl" style="height:260px;" />
+          </div>
+          <div class="gallery-item rounded-2xl shadow-card flex-none" id="gal3" style="width:360px;">
+            <img src="assets/images/gallery/gallery-image3.jpg" alt="Coconut quality"
+              class="w-full object-cover rounded-2xl" style="height:260px;" />
+          </div>
+          <!-- Duplicates for scrolling -->
+          <div class="gallery-item rounded-2xl shadow-card flex-none" id="gal4" style="width:360px;">
+            <img src="assets/images/gallery/gallery-image1.jpg" alt="Coconut farm"
+              class="w-full object-cover rounded-2xl" style="height:260px;" />
+          </div>
+          <div class="gallery-item rounded-2xl shadow-card flex-none" id="gal5" style="width:360px;">
+            <img src="assets/images/gallery/gallery-image2.jpg" alt="Coconut harvest"
+              class="w-full object-cover rounded-2xl" style="height:260px;" />
+          </div>
+          <div class="gallery-item rounded-2xl shadow-card flex-none" id="gal6" style="width:360px;">
+            <img src="assets/images/gallery/gallery-image3.jpg" alt="Coconut quality"
+              class="w-full object-cover rounded-2xl" style="height:260px;" />
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 reveal">
-      <div class="gallery-item rounded-2xl shadow-card" id="gal1">
-        <img src="assets/images/homepage/hero-img.jpg" alt="Coconut close-up"
-             class="w-full object-cover rounded-2xl" style="height:240px;" />
-      </div>
-      <div class="gallery-item rounded-2xl shadow-card md:row-span-2" id="gal2">
-        <img src="assets/images/homepage/hero_bg.png" alt="Coconut palm farm"
-             class="w-full object-cover rounded-2xl" style="height:240px;" />
-      </div>
-      <div class="gallery-item rounded-2xl shadow-card" id="gal3">
-        <img src="assets/images/homepage/hero-img.jpg" alt="Fresh coconut harvest"
-             class="w-full object-cover rounded-2xl" style="height:240px;" />
-      </div>
-      <div class="gallery-item rounded-2xl shadow-card" id="gal4">
-        <img src="assets/images/homepage/hero_bg.png" alt="Coconut farm landscape"
-             class="w-full object-cover rounded-2xl" style="height:190px;" />
-      </div>
-      <div class="gallery-item rounded-2xl shadow-card" id="gal5">
-        <img src="assets/images/homepage/hero-img.jpg" alt="Coconut quality check"
-             class="w-full object-cover rounded-2xl" style="height:190px;" />
-      </div>
-    </div>
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 items-center justify-center p-4"
+    style="display:none; z-index:9999; background:rgba(0,0,0,.85);">
+    <button id="closeLightbox" aria-label="Close lightbox"
+      class="absolute top-5 right-5 text-white rounded-full w-10 h-10 flex items-center justify-center"
+      style="background:rgba(255,255,255,.2);">
+      <i class="fa-solid fa-xmark text-lg"></i>
+    </button>
+    <img id="lightboxImg" src="" alt="Gallery image enlarged" class="rounded-2xl shadow-2xl object-contain"
+      style="max-width:100%; max-height:85vh;" />
   </div>
-</section>
-
-<!-- Lightbox -->
-<div id="lightbox" class="fixed inset-0 items-center justify-center p-4"
-     style="display:none; z-index:9999; background:rgba(0,0,0,.85);">
-  <button id="closeLightbox" aria-label="Close lightbox"
-          class="absolute top-5 right-5 text-white rounded-full w-10 h-10 flex items-center justify-center"
-          style="background:rgba(255,255,255,.2);">
-    <i class="fa-solid fa-xmark text-lg"></i>
-  </button>
-  <img id="lightboxImg" src="" alt="Gallery image enlarged"
-       class="rounded-2xl shadow-2xl object-contain" style="max-width:100%; max-height:85vh;" />
-</div>
 
 
-<!-- ============================================================
+  <!-- ============================================================
      OUR PROCESS
 ============================================================ -->
-<section id="process" class="section bg-cream">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <div class="reveal mb-14">
-      <span class="section-label">Farm to Delivery</span>
-      <h2 class="section-title">Our Process</h2>
-      <p class="section-desc text-sm text-gray-500 mx-auto">
-        A transparent, quality-driven journey from Tamil Nadu's farms to your warehouse.
-      </p>
-    </div>
+  <section id="process" class="section bg-cream">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <div class="reveal visible mb-14">
+        <span class="section-label">Farm to Delivery</span>
+        <h2 class="section-title">Our Process</h2>
+        <p class="section-desc text-sm text-gray-500 mx-auto">
+          A transparent, quality-driven journey from Tamil Nadu's farms to your warehouse.
+        </p>
+      </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 reveal">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 reveal visible">
 
-      <div class="process-step flex flex-col items-center text-center">
-        <div class="w-16 h-16 rounded-2xl bg-primary-light flex items-center justify-center mb-4 relative z-10">
-          <i class="fa-solid fa-tractor text-primary text-2xl"></i>
+        <div class="process-step flex flex-col items-center text-center">
+          <div class="flex items-center justify-center mb-4 relative z-10">
+            <img src="assets/images/icons/icon1.svg" alt="Harvesting" class="w-20 h-20 object-contain" />
+          </div>
+          <div
+            class="w-6 h-6 rounded-full bg-primary text-white font-bold flex items-center justify-center mb-3 text-xs">1
+          </div>
+          <h3 class="font-bold text-gray-900 text-sm mb-2">Harvesting from Farms</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">Carefully handpicked from partner farms across Tamil Nadu at
+            peak ripeness.</p>
         </div>
-        <div class="w-6 h-6 rounded-full bg-primary text-white font-bold flex items-center justify-center mb-3 text-xs">1</div>
-        <h3 class="font-bold text-gray-900 text-sm mb-2">Harvesting from Farms</h3>
-        <p class="text-xs text-gray-500 leading-relaxed">Carefully handpicked from partner farms across Tamil Nadu at peak ripeness.</p>
-      </div>
 
-      <div class="process-step flex flex-col items-center text-center">
-        <div class="w-16 h-16 rounded-2xl bg-primary-light flex items-center justify-center mb-4 relative z-10">
-          <i class="fa-solid fa-magnifying-glass text-primary text-2xl"></i>
+        <div class="process-step flex flex-col items-center text-center">
+          <div class="flex items-center justify-center mb-4 relative z-10">
+            <img src="assets/images/icons/icon2.svg" alt="Quality Sorting & Grading" class="w-20 h-20 object-contain" />
+          </div>
+          <div
+            class="w-6 h-6 rounded-full bg-primary text-white font-bold flex items-center justify-center mb-3 text-xs">2
+          </div>
+          <h3 class="font-bold text-gray-900 text-sm mb-2">Quality Sorting &amp; Grading</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">Each coconut is inspected and graded by size, weight, and
+            moisture content.</p>
         </div>
-        <div class="w-6 h-6 rounded-full bg-primary text-white font-bold flex items-center justify-center mb-3 text-xs">2</div>
-        <h3 class="font-bold text-gray-900 text-sm mb-2">Quality Sorting &amp; Grading</h3>
-        <p class="text-xs text-gray-500 leading-relaxed">Each coconut is inspected and graded by size, weight, and moisture content.</p>
-      </div>
 
-      <div class="process-step flex flex-col items-center text-center">
-        <div class="w-16 h-16 rounded-2xl bg-primary-light flex items-center justify-center mb-4 relative z-10">
-          <i class="fa-solid fa-box-open text-primary text-2xl"></i>
+        <div class="process-step flex flex-col items-center text-center">
+          <div class="flex items-center justify-center mb-4 relative z-10">
+            <img src="assets/images/icons/icon3.svg" alt="Safe Packing & Hygiene" class="w-20 h-20 object-contain" />
+          </div>
+          <div
+            class="w-6 h-6 rounded-full bg-primary text-white font-bold flex items-center justify-center mb-3 text-xs">3
+          </div>
+          <h3 class="font-bold text-gray-900 text-sm mb-2">Safe Packing &amp; Hygiene</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">Packed in breathable crates or custom export packaging to
+            preserve freshness.</p>
         </div>
-        <div class="w-6 h-6 rounded-full bg-primary text-white font-bold flex items-center justify-center mb-3 text-xs">3</div>
-        <h3 class="font-bold text-gray-900 text-sm mb-2">Safe Packing &amp; Hygiene</h3>
-        <p class="text-xs text-gray-500 leading-relaxed">Packed in breathable crates or custom export packaging to preserve freshness.</p>
-      </div>
 
-      <div class="process-step flex flex-col items-center text-center">
-        <div class="w-16 h-16 rounded-2xl bg-primary-light flex items-center justify-center mb-4 relative z-10">
-          <i class="fa-solid fa-truck-arrow-right text-primary text-2xl"></i>
+        <div class="process-step flex flex-col items-center text-center">
+          <div class="flex items-center justify-center mb-4 relative z-10">
+            <img src="assets/images/icons/icon4.svg" alt="Delivery & Export Dispatch" class="w-20 h-20 object-contain" />
+          </div>
+          <div
+            class="w-6 h-6 rounded-full bg-primary text-white font-bold flex items-center justify-center mb-3 text-xs">4
+          </div>
+          <h3 class="font-bold text-gray-900 text-sm mb-2">Delivery &amp; Export Dispatch</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">Dispatched via road or sea freight with all necessary
+            certificates and tracking.</p>
         </div>
-        <div class="w-6 h-6 rounded-full bg-primary text-white font-bold flex items-center justify-center mb-3 text-xs">4</div>
-        <h3 class="font-bold text-gray-900 text-sm mb-2">Delivery &amp; Export Dispatch</h3>
-        <p class="text-xs text-gray-500 leading-relaxed">Dispatched via road or sea freight with all necessary certificates and tracking.</p>
-      </div>
 
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     STATS BANNER
-============================================================ -->
-<div class="highlight-stripe section-sm stat-section reveal">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-white text-center">
-      <div class="stat-card">
-        <p class="font-extrabold" style="font-size:2.5rem;" data-count="35" data-suffix="+">35+</p>
-        <p class="text-xs font-medium uppercase tracking-wide mt-1" style="opacity:.85;">Years in Business</p>
-      </div>
-      <div class="stat-card">
-        <p class="font-extrabold" style="font-size:2.5rem;" data-count="500" data-suffix="K+">500K+</p>
-        <p class="text-xs font-medium uppercase tracking-wide mt-1" style="opacity:.85;">Coconuts Delivered</p>
-      </div>
-      <div class="stat-card">
-        <p class="font-extrabold" style="font-size:2.5rem;" data-count="200" data-suffix="+">200+</p>
-        <p class="text-xs font-medium uppercase tracking-wide mt-1" style="opacity:.85;">Happy Clients</p>
-      </div>
-      <div class="stat-card">
-        <p class="font-extrabold" style="font-size:2.5rem;" data-count="10" data-suffix="+">10+</p>
-        <p class="text-xs font-medium uppercase tracking-wide mt-1" style="opacity:.85;">Export Countries</p>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
 
-<!-- ============================================================
+  <!-- ============================================================
      CONTACT CTA
 ============================================================ -->
-<section id="contact-cta" class="section bg-white">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="reveal rounded-3xl text-center text-white relative overflow-hidden p-10 md:p-16"
-         style="background:linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);">
-      <div class="cta-blob-tr"></div>
-      <div class="cta-blob-bl"></div>
-      <div class="relative" style="z-index:1;">
-        <img src="assets/images/homepage/bg-icon1.png" alt="" aria-hidden="true"
-             class="mx-auto mb-4 object-contain opacity-40 pointer-events-none"
-             style="width:56px; height:56px;" />
-        <h2 class="font-extrabold mb-3" style="font-size:clamp(1.4rem,4vw,2.4rem);">
-          Need a reliable coconut supplier for bulk or export orders?
-        </h2>
-        <p class="mb-8 mx-auto" style="color:rgba(255,255,255,.82); font-size:.9rem; max-width:500px;">
-          Talk to our team and get a customised quote within 24 hours. We handle everything from sourcing to delivery.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="pages/contact.html" id="ctaContact" class="btn btn-white rounded-lg" style="font-size:.95rem; padding:14px 32px;">
-            <i class="fa-solid fa-phone text-sm"></i> Contact Us
-          </a>
-          <a href="mailto:info@sscoconuts.com" id="ctaEmail"
-             class="btn rounded-lg" style="font-size:.95rem; padding:14px 32px; border:2px solid rgba(255,255,255,.4); color:#fff;">
-            <i class="fa-solid fa-envelope text-sm"></i> info@sscoconuts.com
-          </a>
-        </div>
+  <section id="contact-cta" class="relative overflow-hidden py-24 text-center"
+    style="background: url('assets/images/homepage/hero_bg.png') center/cover no-repeat;">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <h2 class="font-extrabold text-gray-900 mb-8" style="font-size:clamp(1.4rem,4vw,2.4rem);">
+        Need a reliable coconut supplier for bulk or export orders?
+      </h2>
+      
+      <div class="flex justify-center mb-4">
+        <a href="contact.html" id="ctaContact" class="btn bg-primary text-white hover:bg-primary-dark rounded-full shadow-md transition-colors"
+          style="font-size:.95rem; padding:12px 36px; font-weight: 600;">
+          Request a Quote
+        </a>
       </div>
+      
+      <p class="mx-auto italic text-gray-800" style="font-size:.85rem; max-width:500px;">
+        (Talk to our team for bulk supply, export inquiries, and product details)
+      </p>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- ============================================================
-     FOOTER
-============================================================ -->
-<footer style="background:rgba(184, 41, 47, 0.1);" class="pt-12 pb-0">
-  <div class="max-w-7xl mx-auto px-6">
+  <!-- Footer + GoTop injected by components.js -->
 
-    <!-- Main grid: Logo | Explore+Support | Products+Legal | Operations | Contact -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-12">
-
-      <!-- Col 1: Logo -->
-      <div class="flex flex-col gap-5">
-        <img src="assets/images/logo/logo.png" alt="SS Coconuts Logo" style="width:84px;" />
-      </div>
-
-      <!-- Col 2: Explore + Support & Help -->
-      <div class="flex flex-col gap-8">
-        <div>
-          <h4 style="font-size:.7rem; letter-spacing:.1em;" class="font-bold text-gray-900 uppercase tracking-widest mb-4">Explore</h4>
-          <ul class="space-y-2">
-            <li><a href="#home"            class="footer-link">Home</a></li>
-            <li><a href="#about"           class="footer-link">About</a></li>
-            <li><a href="#"                class="footer-link">Blog</a></li>
-            <li><a href="pages/contact.html" class="footer-link">Contact Us</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 style="font-size:.7rem; letter-spacing:.1em;" class="font-bold text-gray-900 uppercase tracking-widest mb-4">Support &amp; Help</h4>
-          <ul class="space-y-2">
-            <li><a href="#contact-cta" class="footer-link">Bulk Enquiry / Get Quote</a></li>
-            <li><a href="#"            class="footer-link">How to Order</a></li>
-            <li><a href="#"            class="footer-link">FAQs</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Col 3: Products and Supply + Legal Policies -->
-      <div class="flex flex-col gap-8">
-        <div>
-          <h4 style="font-size:.7rem; letter-spacing:.1em;" class="font-bold text-gray-900 uppercase tracking-widest mb-4">Products and Supply</h4>
-          <ul class="space-y-2">
-            <li><a href="#products" class="footer-link">Products</a></li>
-            <li><a href="#"         class="footer-link">Domestic Supply</a></li>
-            <li><a href="#"         class="footer-link">Export Supply</a></li>
-            <li><a href="#"         class="footer-link">Industries Served</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 style="font-size:.7rem; letter-spacing:.1em;" class="font-bold text-gray-900 uppercase tracking-widest mb-4">Legal Policies</h4>
-          <ul class="space-y-2">
-            <li><a href="#" class="footer-link">Privacy Policy</a></li>
-            <li><a href="#" class="footer-link">Terms &amp; Conditions</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Col 4: Operations & Quality -->
-      <div>
-        <h4 style="font-size:.7rem; letter-spacing:.1em;" class="font-bold text-gray-900 uppercase tracking-widest mb-4">Operations &amp; Quality</h4>
-        <ul class="space-y-2">
-          <li><a href="#" class="footer-link">Quality Assurance</a></li>
-          <li><a href="#" class="footer-link">Infrastructure / Sourcing</a></li>
-          <li><a href="#" class="footer-link">Certificates / Compliance</a></li>
-          <li><a href="#" class="footer-link">Supply</a></li>
-          <li><a href="pages/contact.html" class="footer-link">Contact Us</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 5: Contact Us -->
-      <div>
-        <h4 class="font-bold text-gray-900 text-sm mb-5">Contact Us</h4>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-3">
-            <i class="fa-solid fa-location-dot text-gray-700 mt-1" style="font-size:13px;"></i>
-            <p class="text-gray-600 leading-relaxed" style="font-size:.75rem;">
-              Lucky Enterprises,<br />
-              No.5, Jayam Nagar Ist Street,<br />
-              Muthamil Nagar,<br />
-              Medical College Road,<br />
-              Thanjavur - 613007.<br />
-              Tamilnadu.
-            </p>
-          </li>
-          <li class="flex items-start gap-3">
-            <i class="fa-solid fa-phone text-gray-700 mt-1" style="font-size:13px;"></i>
-            <div class="text-gray-600 leading-relaxed" style="font-size:.75rem;">
-              <p>+91 4362 240114</p>
-              <p>+ 91 9360311236.</p>
-            </div>
-          </li>
-          <li class="flex items-center gap-3">
-            <i class="fa-solid fa-envelope text-gray-700" style="font-size:13px;"></i>
-            <a href="mailto:sscoconutss@yahoo.com"
-               class="text-gray-600 hover:text-primary transition-colors" style="font-size:.75rem;">
-              sscoconutss@yahoo.com
-            </a>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Bottom bar -->
-  <div style="background:rgba(0,0,0,.12);">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-      <p class="text-gray-700" style="font-size:.72rem;">2026 SS Coconuts All Rights Reserved</p>
-      <p class="text-gray-700" style="font-size:.72rem;">Designed By Modominds</p>
-    </div>
-  </div>
-</footer>
+</div><!-- /.page-content -->
 
 
-<!-- All Scripts -->
-<script src="assets/js/script.js"></script>
+  <!-- Scripts -->
+  <script src="assets/js/script.js"></script>
+  <script>
+    // Gallery horizontal scroll carousel — responsive
+    (function () {
+      const track = document.getElementById('galleryTrack');
+      const prevBtn = document.getElementById('galleryPrev');
+      const nextBtn = document.getElementById('galleryNext');
+      if (!track || !prevBtn || !nextBtn) return;
+
+      let currentIndex = 0;
+
+      function getCardWidth() {
+        // Match CSS breakpoints
+        const vw = window.innerWidth;
+        const gap = 16;
+        if (vw <= 639) return (vw - 48) + gap;    // full width minus px-6 padding each side
+        if (vw <= 1023) return 280 + gap;          // tablet
+        return 360 + gap;                          // desktop
+      }
+
+      function updateTrack() {
+        const totalCards = track.children.length;
+        const cardWidth = getCardWidth();
+        const maxIndex = totalCards - 1;
+        currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
+        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+      }
+
+      nextBtn.addEventListener('click', function () { currentIndex++; updateTrack(); });
+      prevBtn.addEventListener('click', function () { currentIndex--; updateTrack(); });
+      window.addEventListener('resize', function () { updateTrack(); });
+    })();
+  </script>
 </body>
+
 </html>
+

@@ -28,14 +28,18 @@
 
 /* ── 2. Reset ─────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html  { scroll-behavior: smooth; }
+html  { scroll-behavior: smooth; overflow-x: hidden; }
 body  {
   font-family: 'Poppins', sans-serif;
   color: var(--text-dark);
   background: var(--white);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-
+  overflow-x: hidden;
+}
+/* Force Poppins on ALL elements — override Tailwind font-serif */
+.font-serif, .font-sans, [class*="font-"] {
+  font-family: 'Poppins', sans-serif !important;
 }
 img { display: block; max-width: 100%; }
 a   { text-decoration: none; color: inherit; }
@@ -70,6 +74,10 @@ ul  { list-style: none; }
 /* ── 5. Layout Helpers ────────────────────────────────────── */
 .section    { padding: 80px 0; }
 .section-sm { padding: 48px 0; }
+@media (max-width: 767px) {
+  .section    { padding: 48px 0; }
+  .section-sm { padding: 32px 0; }
+}
 
 /* ── 6. Typography Helpers ────────────────────────────────── */
 .section-label {
@@ -186,6 +194,15 @@ ul  { list-style: none; }
     rgba(255,255,255,0.10) 100%
   );
 }
+@media (max-width: 767px) {
+  .hero-section {
+    min-height: auto;
+    padding-bottom: 0;
+  }
+  .hero-section::before {
+    background: rgba(255,255,255,0.88);
+  }
+}
 
 /* ── 10. Hero Circular Frame ──────────────────────────────── */
 .hero-img-wrapper {
@@ -193,8 +210,8 @@ ul  { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 360px;
-  height: 360px;
+  width: clamp(220px, 70vw, 360px);
+  height: clamp(220px, 70vw, 360px);
 }
 @media (min-width: 1024px) {
   .hero-img-wrapper { width: 440px; height: 440px; }
@@ -311,14 +328,23 @@ ul  { list-style: none; }
 .marquee-item {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: 1.1rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
 }
 .marquee-item i {
-  font-size: 1.6rem;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .marquee-item { font-size: 1rem; gap: 1rem; }
+  .marquee-item i { font-size: 1.3rem; }
+}
+@media (min-width: 1024px) {
+  .marquee-item { font-size: 1.1rem; gap: 1.5rem; }
+  .marquee-item i { font-size: 1.6rem; }
 }
 
 /* ── 12. Product Carousel ─────────────────────────────────── */
@@ -363,6 +389,20 @@ ul  { list-style: none; }
 .gallery-item { overflow: hidden; cursor: pointer; }
 .gallery-item img { transition: transform .5s ease; }
 .gallery-item:hover img { transform: scale(1.07); }
+/* Responsive gallery card widths — overrides inline style via JS */
+@media (max-width: 639px) {
+  #galleryTrack .gallery-item {
+    width: calc(100vw - 48px) !important;
+  }
+  #galleryTrack .gallery-item img {
+    height: 200px !important;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  #galleryTrack .gallery-item {
+    width: 280px !important;
+  }
+}
 
 /* ── 15. Process Step connector line ─────────────────────── */
 .process-step { position: relative; }
@@ -379,6 +419,17 @@ ul  { list-style: none; }
   z-index: 0;
 }
 @media (max-width: 767px) { .process-step::after { display: none; } }
+
+/* ── 15b. Process Icon hover animation ───────────────────── */
+.process-step img {
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1),
+              filter .35s ease;
+  will-change: transform;
+}
+.process-step:hover img {
+  transform: scale(1.22);
+  filter: drop-shadow(0 8px 18px rgba(184,41,47,.30));
+}
 
 /* ── 16. Scroll Reveal ────────────────────────────────────── */
 .reveal {
@@ -459,7 +510,99 @@ ul  { list-style: none; }
   pointer-events: none;
 }
 
-/* ── 24. Footer links ─────────────────────────────────────── */
+/* ── 24. About image ──────────────────────────────────────────────────────────────────── */
+.about-img {
+  height: 600px;
+}
+@media (max-width: 767px) {
+  .about-img {
+    height: auto;
+    min-height: 280px;
+  }
+}
+
+/* ── 24b. About Banner ────────────────────────────────────────────────────────────────── */
+.about-banner {
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+  background: url('../images/homepage/hero_bg.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.about-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(20, 6, 6, 0.82) 0%,
+    rgba(184, 41, 47, 0.72) 55%,
+    rgba(20, 6, 6, 0.45) 100%
+  );
+}
+.about-banner-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+.about-banner-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.75);
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50px;
+  padding: 5px 14px;
+  margin-bottom: 18px;
+}
+.about-banner-title {
+  font-size: clamp(1.55rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.22;
+  max-width: 600px;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.35);
+}
+.about-banner-title span {
+  color: #ffc0c2;
+}
+.about-banner-desc {
+  font-size: .88rem;
+  color: rgba(255,255,255,.82);
+  max-width: 520px;
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+.about-banner-dots {
+  display: flex;
+  gap: 8px;
+}
+.about-banner-dots span {
+  display: block;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,.5);
+  transition: all .3s;
+}
+.about-banner-dots span:nth-child(1) { width: 28px; background: #fff; }
+.about-banner-dots span:nth-child(2) { width: 16px; }
+.about-banner-dots span:nth-child(3) { width: 10px; }
+@media (max-width: 767px) {
+  .about-banner { min-height: 160px; }
+  .about-banner-content { padding-top: 36px; padding-bottom: 36px; }
+  .about-banner-title   { font-size: 1.4rem; }
+}
+
+/* ── 24. Footer links ─────────────────────────────────────────────────────────────────── */
 .footer-link {
   font-size: .7rem;
   font-weight: 500;
@@ -470,3 +613,185 @@ ul  { list-style: none; }
   display: inline-block;
 }
 .footer-link:hover { color: var(--primary); }
+
+/* ── 25. Mobile-specific overrides ───────────────────────── */
+@media (max-width: 767px) {
+
+  /* ── Hero ──────────────────────────────────────────────────
+     py-20 on the inner grid = 80px top+bottom — way too much.
+     Override to compact values so no whitespace bleeds out.    */
+  .hero-section .max-w-7xl {
+    padding-top: 1.5rem !important;
+    padding-bottom: 2rem !important;
+    gap: 2rem !important;
+  }
+
+  /* Reduce badge + h1 bottom margins */
+  .hero-section span.rounded-full { margin-bottom: 0.75rem !important; }
+  .hero-section h1               { margin-bottom: 0.5rem !important; }
+
+  /* Reduce description paragraph bottom margin */
+  .hero-section p.mb-8           { margin-bottom: 1rem !important; }
+
+  /* Stack hero buttons & reduce their container bottom margin */
+  .hero-section .flex.flex-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0 !important;
+  }
+  .hero-section .flex.flex-wrap .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Shrink hero image on mobile */
+  .hero-img-wrapper {
+    width: clamp(180px, 60vw, 240px) !important;
+    height: clamp(180px, 60vw, 240px) !important;
+  }
+
+  /* ── Navbar ─────────────────────────────────────────────── */
+  #navCta { display: none !important; }
+
+  /* ── Section defaults ───────────────────────────────────── */
+  .section    { padding: 40px 0; }
+  .section-sm { padding: 24px 0; }
+
+  /* Section titles — scale down */
+  .section-title { font-size: 1.4rem; }
+
+  /* ── Products ───────────────────────────────────────────── */
+  #products .flex.flex-col.sm\:flex-row { gap: 0.75rem; }
+
+  /* ── About ──────────────────────────────────────────────── */
+  /* Reduce grid gap and fix image height */
+  #about .max-w-7xl { gap: 1.5rem !important; }
+  .about-img {
+    height: 240px !important;
+    min-height: unset;
+  }
+  #about img[style*="height"] {
+    height: auto !important;
+    min-height: 240px !important;
+  }
+
+  /* ── Why Choose Us ──────────────────────────────────────── */
+  /* Reduce section padding so bg image sits tight */
+  #why-us {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  /* Background image — only needs to cover the heading block */
+  #why-us > div:first-child { height: 240px !important; }
+
+  /* Text block — reduce pt and pb so cards follow closely */
+  #why-us .text-center {
+    padding-top: 0.5rem !important;
+    padding-bottom: 50px !important;
+  }
+  #why-us .text-center h2 { font-size: clamp(1.4rem, 5vw, 2rem) !important; }
+
+  /* Cards — reduce padding */
+  #why-us .grid > div { padding: 1.5rem !important; }
+
+  /* ── Supply Map ─────────────────────────────────────────── */
+  #supply {
+    padding-top: 2rem !important;
+    padding-bottom: 1rem !important;
+  }
+  #supply .text-center { margin-bottom: 1rem; }
+  #supply h2 { font-size: 1.3rem !important; }
+
+  /* ── Gallery ────────────────────────────────────────────── */
+  #gallery .flex.items-end.justify-between {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* ── Process ────────────────────────────────────────────── */
+  #process .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  /* ── Contact CTA ────────────────────────────────────────── */
+  /* py-24 = 6rem each side — reduce to 3rem on mobile */
+  #contact-cta {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  #contact-cta h2 { font-size: 1.15rem !important; }
+
+  /* ── Marquee ────────────────────────────────────────────── */
+  .marquee-content { gap: 2.5rem; }
+
+  /* ── Footer ─────────────────────────────────────────────── */
+  footer .grid { gap: 1.5rem !important; }
+}
+
+/* ── XS (≤479px) ──────────────────────────────────────────── */
+@media (max-width: 479px) {
+
+  /* Hero heading */
+  .hero-section h1 { font-size: 1.65rem !important; }
+
+  /* Hero image even smaller */
+  .hero-img-wrapper {
+    width: clamp(160px, 55vw, 200px) !important;
+    height: clamp(160px, 55vw, 200px) !important;
+  }
+
+  /* Process — single column */
+  #process .grid { grid-template-columns: 1fr; }
+
+  /* Why choose us bg + cards */
+  #why-us > div:first-child { height: 210px !important; }
+  #why-us .grid > div       { padding: 1.25rem !important; }
+}
+
+/* ── 26. Go To Top Button ─────────────────────────────────── */
+#goTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all var(--transition);
+  z-index: 99;
+}
+
+#goTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#goTopBtn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 767px) {
+  #goTopBtn {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}

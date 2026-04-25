@@ -156,4 +156,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ── 9. Go To Top Button ────────────────────────────────── */
+  const goTopBtn = document.getElementById('goTopBtn');
+  if (goTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        goTopBtn.classList.add('show');
+      } else {
+        goTopBtn.classList.remove('show');
+      }
+    }, { passive: true });
+
+    goTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
 });

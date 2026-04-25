@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/images/logo/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Products — SS Coconuts</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="assets/js/components.js" defer></script>
+  <style>
+    .page-banner {
+      position: relative;
+      background: url("assets/images/homepage/hero_bg.png") center/cover no-repeat;
+      overflow: hidden;
+      padding: 64px 0 56px;
+      text-align: center;
+    }
+    .page-banner::before {
+      content: '';
+      position: absolute;
+      left: -30px; top: -20px;
+      width: 320px; height: 320px;
+      background: url("assets/images/homepage/bg-icon1.png") center/contain no-repeat;
+      transform: rotate(-15deg) scaleX(-1);
+      opacity: 0.15;
+      pointer-events: none;
+    }
+    .page-banner-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; padding: 0 24px; }
+    .page-banner-eyebrow {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--primary); background: rgba(184,41,47,0.08);
+      border: 1px solid rgba(184,41,47,0.18); border-radius: 50px; padding: 5px 16px; margin-bottom: 20px;
+    }
+    .page-banner-title {
+      font-size: clamp(1.7rem, 4.5vw, 2.8rem); font-weight: 800; font-style: italic;
+      color: var(--primary); line-height: 1.2; margin-bottom: 18px;
+    }
+    .page-banner-desc { font-size: 0.96rem; color: #5a5a5a; line-height: 1.8; }
+    .page-banner-divider { width: 56px; height: 3px; background: var(--primary); border-radius: 2px; margin: 22px auto 0; opacity: 0.55; }
+    .product-grid-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      transition: transform .3s, box-shadow .3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-grid-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0,0,0,.13);
+    }
+    .product-grid-card img { width: 100%; height: 220px; object-fit: cover; }
+    .product-grid-card .card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .product-grid-card .card-body a { margin-top: auto; }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+<div class="page-content">
+
+  <section class="page-banner">
+    <div class="page-banner-inner">
+      <span class="page-banner-eyebrow"><i class="fa-solid fa-box-open" style="font-size:9px;"></i> What We Offer</span>
+      <h1 class="page-banner-title">Our Coconut Range</h1>
+      <p class="page-banner-desc">From fresh tender coconuts to export-quality mature varieties.</p>
+      <div class="page-banner-divider"></div>
+    </div>
+  </section>
+
+  <section class="section relative overflow-hidden" id="products">
+    <!-- Background overlay from hero_bg -->
+    <div class="absolute inset-0 pointer-events-none" style="background: url('assets/images/homepage/hero_bg.png') center top/cover no-repeat; opacity: 0.85;"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10 space-y-24">
+      
+      <!-- Product 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+        <!-- Image (Left) -->
+        <div class="relative">
+          <!-- Optional subtle blue accent line or box as seen in design could be added here, we keep it clean -->
+          <div class="rounded-2xl overflow-hidden shadow-xl" style="aspect-ratio: 4/5;">
+            <img src="assets/images/products/product-img1.jpg" alt="Organic Premium Coconuts" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+          </div>
+        </div>
+        
+        <!-- Content (Right) -->
+        <div class="flex flex-col items-start">
+          <span class="inline-block bg-green-100 text-green-800 text-xs font-bold uppercase tracking-widest py-1.5 px-3 rounded-md mb-4">
+             <i class="fa-solid fa-leaf mr-1"></i> Certified Organic
+          </span>
+          <h2 class="text-3xl md:text-5xl font-black text-primary mb-6 leading-tight font-serif italic">
+            Pollachi<br>Coconuts
+          </h2>
+          <p class="text-gray-600 mb-8 leading-relaxed text-sm md:text-base">
+            Sourced from the sun-drenched coastal estates of Southeast Asia, our coconuts are the hallmark of quality. We employ regenerative farming practices that enrich the soil, ensuring each fruit carries the distinctive richness and aromatic profile demanded by the world's finest culinary institutions.
+          </p>
+          
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-2 gap-4 w-full mb-10">
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-ruler-combined text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Average Size</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">12cm - 15cm</div>
+            </div>
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-weight-scale text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Weight Range</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">450g - 600g</div>
+            </div>
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-location-dot text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Origin</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">Coastal Estates</div>
+            </div>
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-box text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Packaging</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">25-Unit Crates</div>
+            </div>
+          </div>
+          
+          <a href="contact.html" class="bg-primary text-white font-bold py-3 px-8 rounded hover:bg-primary-dark transition-colors shadow-lg hover:-translate-y-1 transform duration-200">
+            Enquire for Global Export
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+        <!-- Content (Left on Desktop) -->
+        <div class="flex flex-col items-start order-2 md:order-1">
+          <span class="inline-block bg-green-100 text-green-800 text-xs font-bold uppercase tracking-widest py-1.5 px-3 rounded-md mb-4">
+             <i class="fa-solid fa-leaf mr-1"></i> Certified Organic
+          </span>
+          <h2 class="text-3xl md:text-5xl font-black text-primary mb-6 leading-tight font-serif italic">
+            Semi Husked<br>Coconuts
+          </h2>
+          <p class="text-gray-600 mb-8 leading-relaxed text-sm md:text-base">
+            Sourced from the sun-drenched coastal estates of Southeast Asia, our coconuts are the hallmark of quality. We employ regenerative farming practices that enrich the soil, ensuring each fruit carries the distinctive richness and aromatic profile demanded by the world's finest culinary institutions.
+          </p>
+          
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-2 gap-4 w-full mb-10">
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-ruler-combined text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Average Size</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">12cm - 15cm</div>
+            </div>
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-weight-scale text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Weight Range</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">450g - 600g</div>
+            </div>
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-location-dot text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Origin</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">Coastal Estates</div>
+            </div>
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-box text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Packaging</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">25-Unit Crates</div>
+            </div>
+          </div>
+          
+          <a href="contact.html" class="bg-primary text-white font-bold py-3 px-8 rounded hover:bg-primary-dark transition-colors shadow-lg hover:-translate-y-1 transform duration-200">
+            Enquire for Global Export
+          </a>
+        </div>
+        
+        <!-- Image (Right on Desktop) -->
+        <div class="relative order-1 md:order-2">
+          <div class="rounded-2xl overflow-hidden shadow-xl" style="aspect-ratio: 4/5;">
+            <img src="assets/images/products/product-img2.png" alt="Organic Premium Coconuts" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+        <!-- Image (Left) -->
+        <div class="relative">
+          <div class="rounded-2xl overflow-hidden shadow-xl" style="aspect-ratio: 4/5;">
+            <img src="assets/images/products/product-img3.png" alt="Organic Premium Coconuts" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+          </div>
+        </div>
+        
+        <!-- Content (Right) -->
+        <div class="flex flex-col items-start">
+          <span class="inline-block bg-green-100 text-green-800 text-xs font-bold uppercase tracking-widest py-1.5 px-3 rounded-md mb-4">
+             <i class="fa-solid fa-leaf mr-1"></i> Certified Organic
+          </span>
+          <h2 class="text-3xl md:text-5xl font-black text-primary mb-6 leading-tight font-serif italic">
+            Brown Fresh<br>Coconuts
+          </h2>
+          <p class="text-gray-600 mb-8 leading-relaxed text-sm md:text-base">
+            Sourced from the sun-drenched coastal estates of Southeast Asia, our coconuts are the hallmark of quality. We employ regenerative farming practices that enrich the soil, ensuring each fruit carries the distinctive richness and aromatic profile demanded by the world's finest culinary institutions.
+          </p>
+          
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-2 gap-4 w-full mb-10">
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-ruler-combined text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Average Size</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">12cm - 15cm</div>
+            </div>
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-weight-scale text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Weight Range</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">450g - 600g</div>
+            </div>
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-location-dot text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Origin</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">Coastal Estates</div>
+            </div>
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-box text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Packaging</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">25-Unit Crates</div>
+            </div>
+          </div>
+          
+          <a href="contact.html" class="bg-primary text-white font-bold py-3 px-8 rounded hover:bg-primary-dark transition-colors shadow-lg hover:-translate-y-1 transform duration-200">
+            Enquire for Global Export
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+        <!-- Content (Left on Desktop) -->
+        <div class="flex flex-col items-start order-2 md:order-1">
+          <span class="inline-block bg-green-100 text-green-800 text-xs font-bold uppercase tracking-widest py-1.5 px-3 rounded-md mb-4">
+             <i class="fa-solid fa-leaf mr-1"></i> Certified Organic
+          </span>
+          <h2 class="text-3xl md:text-5xl font-black text-primary mb-6 leading-tight font-serif italic">
+            Peravurani<br>Coconuts
+          </h2>
+          <p class="text-gray-600 mb-8 leading-relaxed text-sm md:text-base">
+            Sourced from the sun-drenched coastal estates of Southeast Asia, our coconuts are the hallmark of quality. We employ regenerative farming practices that enrich the soil, ensuring each fruit carries the distinctive richness and aromatic profile demanded by the world's finest culinary institutions.
+          </p>
+          
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-2 gap-4 w-full mb-10">
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-ruler-combined text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Average Size</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">12cm - 15cm</div>
+            </div>
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-weight-scale text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Weight Range</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">450g - 600g</div>
+            </div>
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-location-dot text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Origin</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">Coastal Estates</div>
+            </div>
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-box text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Packaging</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">25-Unit Crates</div>
+            </div>
+          </div>
+          
+          <a href="contact.html" class="bg-primary text-white font-bold py-3 px-8 rounded hover:bg-primary-dark transition-colors shadow-lg hover:-translate-y-1 transform duration-200">
+            Enquire for Global Export
+          </a>
+        </div>
+        
+        <!-- Image (Right on Desktop) -->
+        <div class="relative order-1 md:order-2">
+          <div class="rounded-2xl overflow-hidden shadow-xl" style="aspect-ratio: 4/5;">
+            <img src="assets/images/products/product-img4.png" alt="Peravurani Coconut" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+        <!-- Image (Left) -->
+        <div class="relative">
+          <div class="rounded-2xl overflow-hidden shadow-xl" style="aspect-ratio: 4/5;">
+            <img src="assets/images/products/product-img5.jpg" alt="Export Semi Husked Coconut" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+          </div>
+        </div>
+        
+        <!-- Content (Right) -->
+        <div class="flex flex-col items-start">
+          <span class="inline-block bg-green-100 text-green-800 text-xs font-bold uppercase tracking-widest py-1.5 px-3 rounded-md mb-4">
+             <i class="fa-solid fa-leaf mr-1"></i> Certified Organic
+          </span>
+          <h2 class="text-3xl md:text-5xl font-black text-primary mb-6 leading-tight font-serif italic">
+            Export Semi<br>Husked Coconuts
+          </h2>
+          <p class="text-gray-600 mb-8 leading-relaxed text-sm md:text-base">
+            Sourced from the sun-drenched coastal estates of Southeast Asia, our coconuts are the hallmark of quality. We employ regenerative farming practices that enrich the soil, ensuring each fruit carries the distinctive richness and aromatic profile demanded by the world's finest culinary institutions.
+          </p>
+          
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-2 gap-4 w-full mb-10">
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-ruler-combined text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Average Size</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">12cm - 15cm</div>
+            </div>
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-weight-scale text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Weight Range</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">450g - 600g</div>
+            </div>
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-location-dot text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Origin</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">Coastal Estates</div>
+            </div>
+            <div class="bg-cream rounded-xl p-4">
+              <i class="fa-solid fa-box text-primary mb-2"></i>
+              <div class="text-[0.65rem] text-gray-500 uppercase tracking-wider font-bold mb-1">Packaging</div>
+              <div class="font-bold text-gray-900 text-sm md:text-base">25-Unit Crates</div>
+            </div>
+          </div>
+          
+          <a href="contact.html" class="bg-primary text-white font-bold py-3 px-8 rounded hover:bg-primary-dark transition-colors shadow-lg hover:-translate-y-1 transform duration-200">
+            Enquire for Global Export
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

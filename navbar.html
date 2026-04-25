@@ -1,0 +1,67 @@
+<!--
+  ============================================================
+  SS Coconuts — Navbar Component
+  Include the <head> dependencies below in your page:
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/script.js" defer></script>
+  ============================================================
+-->
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white" role="navigation" aria-label="Main navigation">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between" style="height:68px;">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center" id="logoLink">
+      <img src="assets/images/logo/logo.png" alt="SS Coconuts Logo" class="h-12 w-auto object-contain" />
+    </a>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden lg:flex items-center gap-8">
+      <li><a href="index.html" class="nav-link" id="navHome">Home</a></li>
+      <li><a href="about.html" class="nav-link" id="navAbout">About</a></li>
+      <li><a href="products.html" class="nav-link" id="navProducts">Products</a></li>
+      <li><a href="contact.html" class="nav-link" id="navContact">Contact Us</a></li>
+    </ul>
+
+    <!-- CTA + Hamburger -->
+    <div class="flex items-center gap-3">
+      <a href="contact.html" id="navCta"
+         class="hidden md:inline-flex btn btn-primary text-sm rounded-md"
+         style="padding:10px 20px;">
+        <i class="fa-solid fa-paper-plane" style="font-size:11px;"></i> Get a Quote
+      </a>
+      <button id="menuBtn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
+              aria-label="Open menu">
+        <i class="fa-solid fa-bars text-gray-700 text-xl"></i>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+<!-- ============================================================
+     MOBILE DRAWER
+============================================================ -->
+<div id="mobileMenu" class="fixed inset-y-0 right-0 w-72 bg-white z-50 shadow-2xl"
+     role="dialog" aria-label="Mobile menu">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+    <span class="font-bold text-gray-900">Menu</span>
+    <button id="closeMenu" class="p-2 hover:bg-gray-100 rounded-md" aria-label="Close menu">
+      <i class="fa-solid fa-xmark text-gray-600 text-xl"></i>
+    </button>
+  </div>
+  <ul class="flex flex-col px-6 py-6 gap-5">
+    <li><a href="index.html" class="font-medium text-gray-700 hover:text-primary transition-colors">Home</a></li>
+    <li><a href="about.html" class="font-medium text-gray-700 hover:text-primary transition-colors">About</a></li>
+    <li><a href="products.html" class="font-medium text-gray-700 hover:text-primary transition-colors">Products</a></li>
+    <li><a href="contact.html" class="font-medium text-gray-700 hover:text-primary transition-colors">Contact Us</a></li>
+    <li class="pt-2">
+      <a href="contact.html" class="btn btn-primary w-full justify-center rounded-md">Get a Quote</a>
+    </li>
+  </ul>
+</div>

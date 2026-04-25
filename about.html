@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/images/logo/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — SS Coconuts | India's Trusted Coconut Supplier</title>
+  <meta name="description"
+    content="Learn about SS Coconuts — 30+ years of trusted coconut supply from Tamil Nadu to markets across India and the Middle East. Quality, reliability, and heritage since 1989." />
+
+  <!-- Tailwind CSS v2 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- SS Coconuts Custom Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Shared Components (navbar + footer) -->
+  <script src="assets/js/components.js" defer></script>
+
+  <style>
+    /* ── About Page Light Banner ──────────────────────────── */
+   .about-page-banner {
+  position: relative;
+  width: 100%;
+  background: url("assets/images/homepage/hero_bg.png") center/cover no-repeat;
+  overflow: hidden;
+  padding: 64px 0 56px;
+  display: flex;
+  align-items: center;
+}
+
+    .about-page-banner::before {
+      content: '';
+      position: absolute;
+      left: -30px; top: -20px;
+      width: 340px; height: 340px;
+      background: url("assets/images/homepage/bg-icon1.png") center/contain no-repeat;
+      transform: rotate(-15deg) scaleX(-1);
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    .about-page-banner::after {
+      content: '';
+      position: absolute;
+      right: -20px; bottom: -20px;
+      width: 300px; height: 300px;
+      background: url("assets/images/homepage/bg-icon2.png") center/contain no-repeat;
+      transform: rotate(10deg);
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    .about-page-banner-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .about-page-banner-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: rgba(184, 41, 47, 0.08);
+      border: 1px solid rgba(184, 41, 47, 0.18);
+      border-radius: 50px;
+      padding: 5px 16px;
+      margin-bottom: 20px;
+    }
+    .about-page-banner-title {
+      font-size: clamp(1.7rem, 4.5vw, 2.8rem);
+      font-weight: 800;
+      font-style: italic;
+      color: var(--primary);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    .about-page-banner-desc {
+      font-size: 0.96rem;
+      color: #5a5a5a;
+      line-height: 1.8;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    .about-page-banner-divider {
+      width: 56px; height: 3px;
+      background: var(--primary);
+      border-radius: 2px;
+      margin: 22px auto 0;
+      opacity: 0.55;
+    }
+    @media (max-width: 767px) {
+      .about-page-banner { padding: 44px 0 40px; }
+      .about-page-banner-title { font-size: 1.55rem; }
+    }
+
+    /* ── Vision & Commitment Section ─────────────────────── */
+    .vision-section {
+      background: #fff;
+      padding: 72px 24px;
+      text-align: center;
+    }
+    .vision-eyebrow {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #6b4c4c;
+      background: rgba(184,41,47,0.07);
+      border: 1px solid rgba(184,41,47,0.15);
+      border-radius: 50px;
+      padding: 5px 18px;
+      margin-bottom: 22px;
+    }
+    .vision-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .vision-desc {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.85;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* ── Our Values Redesign ──────────────────────────────── */
+    .values-section {
+      background: #fdf6f0;
+      padding: 80px 24px;
+    }
+    .values-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .values-header h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .values-header p {
+      font-size: 0.92rem;
+      color: #777;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 8px;
+    }
+    .value-item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .value-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4px;
+    }
+    .value-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .value-item h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0;
+    }
+    .value-item p {
+      font-size: 0.875rem;
+      color: #666;
+      line-height: 1.75;
+      margin: 0;
+    }
+    @media (max-width: 640px) {
+      .values-grid { grid-template-columns: 1fr; gap: 36px; padding: 0; }
+    }
+
+    /* ── How We Work ────────────────────────────────────────── */
+    .hww-section {
+      background: var(--primary);
+      padding: 72px 48px 80px;
+    }
+    .hww-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 56px;
+    }
+    .hww-title {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      margin: 0;
+    }
+    .hww-tagline {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-align: right;
+      max-width: 260px;
+      line-height: 1.8;
+      flex-shrink: 0;
+      padding-top: 10px;
+    }
+    .hww-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.2);
+      border-left: 1px solid rgba(255,255,255,0.2);
+    }
+    .hww-card {
+      border-right: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding: 36px 32px 40px;
+    }
+    .hww-num {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.15);
+      line-height: 1;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .hww-card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .hww-card:first-child .hww-card-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: rgba(255,255,255,0.5);
+    }
+    .hww-card-desc {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.75;
+      margin: 0;
+    }
+    @media (max-width: 767px) {
+      .hww-section { padding: 48px 20px 56px; }
+      .hww-header { flex-direction: column; gap: 16px; }
+      .hww-tagline { text-align: left; max-width: 100%; }
+      .hww-grid { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .hww-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ── Export Capability ─────────────────────────────────── */
+    .export-section {
+      background: #fff;
+      padding: 80px 24px 72px;
+      text-align: center;
+    }
+    .export-eyebrow {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #7a3a3a;
+      background: rgba(184,41,47,0.08);
+      border: 1px solid rgba(184,41,47,0.15);
+      border-radius: 50px;
+      padding: 5px 18px;
+      margin-bottom: 24px;
+    }
+    .export-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .export-desc {
+      font-size: 0.93rem;
+      color: #666;
+      line-height: 1.85;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* ── New CTA ────────────────────────────────────────────── */
+    .cta-new {
+      position: relative;
+      padding: 88px 24px;
+      text-align: center;
+      background: url('assets/images/homepage/hero_bg.png') center/cover no-repeat;
+      overflow: hidden;
+    }
+    .cta-new h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 28px;
+    }
+    .cta-new .cta-note {
+      font-size: 0.88rem;
+      color: #555;
+      font-style: italic;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+<div class="page-content">
+
+  <!-- ============================================================
+     ABOUT PAGE BANNER
+  ============================================================ -->
+  <section class="about-page-banner" aria-label="About banner">
+    <div class="about-page-banner-inner">
+
+      <h1 class="about-page-banner-title">30+ Years of Trusted Coconut Supply</h1>
+      <p class="about-page-banner-desc">
+        From the farms of Tamil Nadu to markets across India and
+        the Middle East, Lucky Enterprises has been delivering
+        consistent quality and reliable supply since 1989.
+      </p>
+      <div class="about-page-banner-divider" aria-hidden="true"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     ABOUT / HERITAGE  (same as homepage)
+  ============================================================ -->
+  <section id="about" class="bg-white">
+    <div class="section max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+
+      <!-- Image -->
+      <div class="reveal-left h-full">
+        <div class="relative h-full">
+          <img src="assets/images/about/aboutimg.png" alt="Coconut farm in Tamil Nadu"
+            class="w-full h-full object-cover rounded-3xl shadow-xl about-img" />
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="reveal-right">
+        <span class="section-label">About SS Coconuts</span>
+        <h2 class="section-title">Our Heritage of Excellence</h2>
+        <p class="text-sm text-gray-500 leading-relaxed mb-5">
+          Founded in 1989 in the heart of Tamil Nadu, SS Coconuts began as a small family-run farm
+          with a commitment to delivering the finest coconuts. Over three decades, we have grown into
+          one of India's most reliable coconut suppliers, serving clients across 50+ districts and
+          exporting to 10+ countries.
+        </p>
+        <p class="text-sm text-gray-500 leading-relaxed mb-8">
+          After harnessing the best growing conditions Tamil Nadu has to offer, our coconuts are
+          carefully harvested, graded, and dispatched with the highest quality standards — from
+          farm to your doorstep.
+        </p>
+        <a href="contact.html" class="btn btn-primary rounded-md inline-flex items-center gap-2" style="padding:12px 24px;">
+          Read More <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     OUR VISION AND COMMITMENT
+  ============================================================ -->
+  <section class="vision-section" aria-label="Our Vision and Commitment">
+    <div class="vision-eyebrow">Our Vision and Commitment</div>
+    <h2 class="vision-title">Committed to Growth and Quality</h2>
+    <p class="vision-desc">
+      We remain committed to building long-term partnerships by ensuring quality,
+      reliability, and customer satisfaction in every order.
+    </p>
+  </section>
+
+
+  <!-- ============================================================
+     OUR VALUES
+  ============================================================ -->
+  <section class="values-section" aria-label="Our Values">
+    <div class="values-header reveal">
+      <h2>Our Values</h2>
+      <p>Built on trust, quality, and long-term relationships.</p>
+    </div>
+    <div class="values-grid reveal">
+
+      <!-- Value 1 -->
+      <div class="value-item">
+        <div class="value-icon">
+          <img src="assets/images/icons/value_icon1.svg" alt="Premium Quality" />
+        </div>
+        <h3>Premium Quality Products</h3>
+        <p>We source coconuts from trusted farming regions across Tamil Nadu, ensuring consistent size, freshness, and quality suitable for both domestic and export markets.</p>
+      </div>
+
+      <!-- Value 2 -->
+      <div class="value-item">
+        <div class="value-icon">
+          <img src="assets/images/icons/value_icon2.svg" alt="Reliable Service" />
+        </div>
+        <h3>Reliable &amp; Transparent Service</h3>
+        <p>We maintain clear communication at every stage—from order confirmation to delivery—and provide complete support for documentation, billing, and logistics.</p>
+      </div>
+
+      <!-- Value 3 -->
+      <div class="value-item">
+        <div class="value-icon">
+          <img src="assets/images/icons/value_icon3.svg" alt="Naturally Sourced" />
+        </div>
+        <h3>Naturally Sourced</h3>
+        <p>Our coconuts are carefully selected from naturally grown farms, maintaining authenticity and quality without compromising on traditional sourcing practices.</p>
+      </div>
+
+      <!-- Value 4 -->
+      <div class="value-item">
+        <div class="value-icon">
+          <img src="assets/images/icons/value_icon4.svg" alt="Responsible & Sustainable" />
+        </div>
+        <h3>Responsible &amp; Sustainable</h3>
+        <p>We follow practical and eco-conscious methods in sourcing and packaging, focusing on minimizing waste and ensuring safe handling for bulk and export supply.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     HOW WE WORK
+  ============================================================ -->
+  <section class="hww-section" aria-label="How we work">
+    <div class="hww-header reveal">
+      <h2 class="hww-title">How we work</h2>
+      <p class="hww-tagline">A streamlined process designed for quality,<br>consistency, and reliable delivery.</p>
+    </div>
+    <div class="hww-grid reveal">
+
+      <!-- Step 01 -->
+      <div class="hww-card">
+        <div class="hww-num">01</div>
+        <h3 class="hww-card-title">Direct Farm Sourcing</h3>
+        <p class="hww-card-desc">We procure coconuts directly from trusted farmers across Tamil Nadu, ensuring fresh supply and consistent quality from the source.</p>
+      </div>
+
+      <!-- Step 02 -->
+      <div class="hww-card">
+        <div class="hww-num">02</div>
+        <h3 class="hww-card-title">Careful Selection &amp; Grading</h3>
+        <p class="hww-card-desc">Each batch is manually inspected and graded based on size, maturity, and quality to meet specific domestic and export requirements.</p>
+      </div>
+
+      <!-- Step 03 -->
+      <div class="hww-card">
+        <div class="hww-num">03</div>
+        <h3 class="hww-card-title">Hygienic Handling &amp; Packing</h3>
+        <p class="hww-card-desc">Coconuts are handled with care and packed using safe and suitable materials to maintain freshness during storage and transit.</p>
+      </div>
+
+      <!-- Step 04 -->
+      <div class="hww-card">
+        <div class="hww-num">04</div>
+        <h3 class="hww-card-title">Bulk Order Management</h3>
+        <p class="hww-card-desc">We efficiently manage both small and large-scale orders, ensuring timely preparation and readiness for dispatch without delays.</p>
+      </div>
+
+      <!-- Step 05 -->
+      <div class="hww-card">
+        <div class="hww-num">05</div>
+        <h3 class="hww-card-title">Logistics &amp; Delivery</h3>
+        <p class="hww-card-desc">With a reliable transport network, we ensure smooth delivery across India and coordinate export shipments to international markets.</p>
+      </div>
+
+      <!-- Step 06 -->
+      <div class="hww-card">
+        <div class="hww-num">06</div>
+        <h3 class="hww-card-title">Ongoing Client Support</h3>
+        <p class="hww-card-desc">We maintain clear communication with our clients, providing updates, assistance, and support to build long-term business relationships.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     EXPORT CAPABILITY
+  ============================================================ -->
+  <section class="export-section" aria-label="Our Export Capability">
+    <div class="reveal">
+      <span class="export-eyebrow">. Our Export Capability</span>
+      <h2 class="export-title">Serving Global Markets with Confidence</h2>
+      <p class="export-desc">
+        Lucky Enterprises has established a strong presence in export markets, particularly in the Middle East. We
+        understand the requirements of international buyers and ensure that our products meet export standards in
+        terms of quality, packaging, and handling.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     CTA
+  ============================================================ -->
+  <section class="cta-new" aria-label="Contact CTA">
+    <div class="max-w-3xl mx-auto relative z-10 reveal">
+      <h2>Partner with a Trusted Coconut Supplier</h2>
+      <a href="contact.html"
+        class="btn bg-primary text-white hover:bg-primary-dark rounded-full shadow-md transition-colors"
+        style="font-size:.95rem; padding:13px 40px; font-weight:600;">
+        Request a Quote
+      </a>
+      <p class="cta-note">(Talk to our team for bulk supply, export inquiries, and product details)</p>
+    </div>
+  </section>
+
+</div><!-- /.page-content -->
+
+<!-- Scripts -->
+<script src="assets/js/script.js"></script>
+</body>
+</html>
