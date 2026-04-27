@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/images/logo/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — SS Coconuts | Policies &amp; Legal Information</title>
+  <meta name="description"
+    content="Read the Terms and Conditions of SS Coconuts (Lucky Enterprises). Understand our agreement scope, product specifications, pricing, logistics, payment, and more." />
+
+  <!-- Tailwind CSS v2 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- SS Coconuts Custom Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Shared Components (navbar + footer) -->
+  <script src="assets/js/components.js" defer></script>
+
+  <style>
+    /* ── Terms Banner ─────────────────────────────────────── */
+    .terms-banner {
+      position: relative;
+      width: 100%;
+      min-height: 280px;
+      background: url("assets/images/homepage/hero_bg.png") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    /* No overlay — hero image shown as-is */
+
+    .terms-banner-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 72px 24px 60px;
+    }
+    .terms-banner-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: rgba(184, 41, 47, 0.08);
+      border: 1px solid rgba(184, 41, 47, 0.18);
+      border-radius: 50px;
+      padding: 6px 18px;
+      margin-bottom: 22px;
+    }
+    .terms-banner-title {
+      font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+      font-weight: 900;
+      font-style: italic;
+      color: var(--primary);
+      line-height: 1.1;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      text-shadow: none;
+      margin-bottom: 20px;
+    }
+    .terms-banner-desc {
+      font-size: 0.875rem;
+      color: #000000;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .terms-banner-divider {
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 2px;
+      margin: 24px auto 0;
+      opacity: 0.7;
+    }
+    @media (max-width: 767px) {
+      .terms-banner { min-height: 200px; }
+      .terms-banner-inner { padding: 48px 20px 40px; }
+      .terms-banner-title { font-size: 1.75rem; }
+    }
+
+    /* ── Terms Content ────────────────────────────────────── */
+    .terms-page {
+      background: #fff;
+    }
+    .terms-container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 64px 32px 80px;
+    }
+    @media (max-width: 767px) {
+      .terms-container { padding: 40px 20px 60px; }
+    }
+
+    /* Intro paragraph */
+    .terms-intro {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.85;
+      margin-bottom: 52px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Section block */
+    .tc-section {
+      margin-bottom: 44px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #f0eded;
+    }
+    .tc-section:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .tc-section-num {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .tc-section-num::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 1px;
+    }
+
+    .tc-section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+
+    .tc-section-body {
+      font-size: 0.875rem;
+      color: #555;
+      line-height: 1.85;
+    }
+    .tc-section-body p {
+      margin-bottom: 10px;
+    }
+    .tc-section-body p:last-child {
+      margin-bottom: 0;
+    }
+    .tc-section-body ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .tc-section-body ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: #555;
+      line-height: 1.7;
+    }
+    .tc-section-body ul li .tc-check {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(184, 41, 47, 0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .tc-section-body ul li .tc-check i {
+      font-size: 0.55rem;
+      color: var(--primary);
+    }
+
+    /* Highlight box (for specs like table) */
+    .tc-highlight-box {
+      background: rgba(184, 41, 47, 0.04);
+      border: 1px solid rgba(184, 41, 47, 0.12);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.8;
+    }
+    .tc-highlight-box .tc-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .tc-highlight-box .tc-row:last-child {
+      margin-bottom: 0;
+    }
+    .tc-highlight-box .tc-label {
+      min-width: 180px;
+      font-weight: 600;
+      color: #333;
+      font-size: 0.83rem;
+    }
+    .tc-highlight-box .tc-value {
+      color: #666;
+    }
+    @media (max-width: 600px) {
+      .tc-highlight-box .tc-row { flex-direction: column; gap: 2px; }
+      .tc-highlight-box .tc-label { min-width: unset; }
+    }
+
+    /* ── Signature Block ──────────────────────────────────── */
+    .terms-signature {
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 2px solid #eee;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .terms-signature-date {
+      font-size: 0.82rem;
+      color: #888;
+      font-style: italic;
+    }
+    .terms-signature-date strong {
+      color: #444;
+      font-style: normal;
+    }
+    .terms-signature-authority {
+      text-align: right;
+    }
+    .terms-signature-authority .sig-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .terms-signature-authority .sig-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #333;
+    }
+    @media (max-width: 540px) {
+      .terms-signature { flex-direction: column; gap: 20px; }
+      .terms-signature-authority { text-align: left; }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+<div class="page-content">
+
+  <!-- ============================================================
+       TERMS BANNER
+  ============================================================ -->
+  <section class="terms-banner" aria-label="Terms and Conditions banner">
+    <div class="terms-banner-inner">
+      <span class="terms-banner-eyebrow">
+        <i class="fa-solid fa-scale-balanced"></i> Legal Information
+      </span>
+      <h1 class="terms-banner-title">Privacy Policy</h1>
+      <p class="terms-banner-desc">
+        Please read our privacy policy carefully before entering into any agreement with
+        Estate Coconuts Global Export / SS Coconuts.
+      </p>
+      <div class="terms-banner-divider" aria-hidden="true"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TERMS CONTENT
+  ============================================================ -->
+  <section class="terms-page" aria-label="Terms and Conditions content">
+    <div class="terms-container">
+
+      <!-- Intro -->
+      <p class="terms-intro">
+        These Terms and Conditions constitute a legally binding agreement
+        between Estate Coconuts Global Export and the purchaser. By
+        engaging in trade, you acknowledge full compliance with the
+        international shipping standards and quality protocols outlined
+        herein.
+      </p>
+
+      <!-- 01 -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">01</span>
+        <h2 class="tc-section-title">Agreement Scope</h2>
+        <div class="tc-section-body">
+          <p>These Terms and Conditions constitute a legally binding agreement between Estate Coconuts Global Export and the purchaser. By engaging in trade, you acknowledge full compliance with the international shipping standards and quality protocols outlined herein.</p>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">02</span>
+        <h2 class="tc-section-title">Product Specifications</h2>
+        <div class="tc-section-body">
+          <p>All coconut products are graded according to ISO 22000 standards. Specifications regarding husk thickness, water volume, and meat maturity are detailed in the individual Export Manifest provided at the time of shipment.</p>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">03</span>
+        <h2 class="tc-section-title">Pricing &amp; Valuation</h2>
+        <div class="tc-section-body">
+          <p>Prices are quoted in USD unless otherwise specified. Due to the volatile nature of global agricultural markets, quotes are valid for a period of 72 hours from issuance. Estate Coconuts reserves the right to adjust pricing based on freight fluctuations.</p>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">04</span>
+        <h2 class="tc-section-title">Logistics &amp; Delivery</h2>
+        <div class="tc-section-body">
+          <p>Delivery terms are governed by Incoterms&reg; 2020. Standard shipping is CIF (Cost, Insurance, and Freight) to the designated port of entry. Risk of loss passes to the buyer upon the vessel's arrival at the port of discharge.</p>
+          <p style="font-style:italic; color:#666;">"Logistics excellence is the cornerstone of our global trade promise. We ensure cold-chain integrity from estate to port."</p>
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">05</span>
+        <h2 class="tc-section-title">Payment Framework</h2>
+        <div class="tc-section-body">
+          <ul>
+            <li><span class="tc-check"><i class="fa-solid fa-check"></i></span><span>Irrevocable Letter of Credit (L/C) at sight.</span></li>
+            <li><span class="tc-check"><i class="fa-solid fa-check"></i></span><span>Telegraphic Transfer (T/T) with 40% advance deposit.</span></li>
+            <li><span class="tc-check"><i class="fa-solid fa-check"></i></span><span>Balance payable against scanned shipping documents.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 06 -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">06</span>
+        <h2 class="tc-section-title">Inspection Rights</h2>
+        <div class="tc-section-body">
+          <p>Buyers have the right to appoint a third-party surveyor (e.g., SGS) at the port of loading. Claims regarding quality must be filed within 7 business days of cargo arrival, accompanied by certified photographic evidence and surveyor reports.</p>
+        </div>
+      </div>
+
+      <!-- 07 -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">07</span>
+        <h2 class="tc-section-title">Force Majeure</h2>
+        <div class="tc-section-body">
+          <p>Estate Coconuts is not liable for delays or failures in performance resulting from acts beyond our control, including but not limited to extreme weather events affecting harvest, maritime strikes, or changes in international export regulations.</p>
+        </div>
+      </div>
+
+      <!-- 08 -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">08</span>
+        <h2 class="tc-section-title">Liability Limitations</h2>
+        <div class="tc-section-body">
+          <p>Our liability is strictly limited to the invoice value of the goods. We do not accept liability for consequential losses, loss of profit, or damage to brand reputation resulting from supply chain disruptions.</p>
+        </div>
+      </div>
+
+      <!-- 09 -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">09</span>
+        <h2 class="tc-section-title">Intellectual Property</h2>
+        <div class="tc-section-body">
+          <p>The "Estate Coconuts" name, logo, and all marketing collateral are protected by global trademark laws. Use of our branding for secondary retail purposes requires written authorization from our compliance department.</p>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">10</span>
+        <h2 class="tc-section-title">Termination Protocol</h2>
+        <div class="tc-section-body">
+          <p>Either party may terminate the trade agreement with 30 days' written notice. Outstanding shipments confirmed via L/C prior to termination notice must be fulfilled under the original terms.</p>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">11</span>
+        <h2 class="tc-section-title">Confidentiality</h2>
+        <div class="tc-section-body">
+          <p>Both parties agree to maintain the confidentiality of pricing structures, supply chain routes, and proprietary processing methods disclosed during the course of business.</p>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">12</span>
+        <h2 class="tc-section-title">Compliance &amp; Ethics</h2>
+        <div class="tc-section-body">
+          <p>We strictly adhere to anti-bribery and fair labor practices. All partner estates must certify that no forced labor or unsustainable deforestation practices were used in the production of the coconut export.</p>
+        </div>
+      </div>
+
+      <!-- 13 -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">13</span>
+        <h2 class="tc-section-title">Governing Law</h2>
+        <div class="tc-section-body">
+          <p>This agreement shall be governed by and construed in accordance with the laws of the jurisdiction where Estate Coconuts Global Export is headquartered. Any disputes will be settled via arbitration.</p>
+        </div>
+      </div>
+
+      <!-- 14 -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">14</span>
+        <h2 class="tc-section-title">Final Provisions</h2>
+        <div class="tc-section-body">
+          <p>If any provision of these terms is found to be unenforceable, the remaining provisions shall remain in full force. These terms represent the entire agreement between the parties regarding coconut export services.</p>
+        </div>
+      </div>
+
+      <!-- Signature / Date -->
+      <div class="terms-signature reveal">
+        <div class="terms-signature-date">
+          <p>Effective Date: <strong>January 01, 2025</strong></p>
+          <p style="margin-top:4px; font-size:.8rem;">Last updated: April 2026</p>
+        </div>
+        <div class="terms-signature-authority">
+          <p class="sig-title">Legal &amp; Compliance Division</p>
+          <p class="sig-name">Estate Coconuts Global Export</p>
+          <p style="font-size:.78rem; color:#aaa; margin-top:4px;">Global Headquarters</p>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+
+</div><!-- /.page-content -->
+
+<!-- Scripts -->
+<script src="assets/js/script.js"></script>
+</body>
+</html>

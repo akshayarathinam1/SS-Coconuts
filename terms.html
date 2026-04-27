@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/images/logo/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms & Conditions — SS Coconuts | Policies &amp; Legal Information</title>
+  <meta name="description"
+    content="Read the Terms and Conditions of SS Coconuts (Lucky Enterprises). Understand our agreement scope, product specifications, pricing, logistics, payment, and more." />
+
+  <!-- Tailwind CSS v2 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- SS Coconuts Custom Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Shared Components (navbar + footer) -->
+  <script src="assets/js/components.js" defer></script>
+
+  <style>
+    /* ── Terms Banner ─────────────────────────────────────── */
+    .terms-banner {
+      position: relative;
+      width: 100%;
+      min-height: 280px;
+      background: url("assets/images/homepage/hero_bg.png") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    /* No overlay — hero image shown as-is */
+
+    .terms-banner-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 72px 24px 60px;
+    }
+    .terms-banner-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: rgba(184, 41, 47, 0.08);
+      border: 1px solid rgba(184, 41, 47, 0.18);
+      border-radius: 50px;
+      padding: 6px 18px;
+      margin-bottom: 22px;
+    }
+    .terms-banner-title {
+      font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+      font-weight: 900;
+      font-style: italic;
+      color: var(--primary);
+      line-height: 1.1;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      text-shadow: none;
+      margin-bottom: 20px;
+    }
+    .terms-banner-desc {
+      font-size: 0.875rem;
+      color: #000000;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .terms-banner-divider {
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 2px;
+      margin: 24px auto 0;
+      opacity: 0.7;
+    }
+    @media (max-width: 767px) {
+      .terms-banner { min-height: 200px; }
+      .terms-banner-inner { padding: 48px 20px 40px; }
+      .terms-banner-title { font-size: 1.75rem; }
+    }
+
+    /* ── Terms Content ────────────────────────────────────── */
+    .terms-page {
+      background: #fff;
+    }
+    .terms-container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 64px 32px 80px;
+    }
+    @media (max-width: 767px) {
+      .terms-container { padding: 40px 20px 60px; }
+    }
+
+    /* Intro paragraph */
+    .terms-intro {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.85;
+      margin-bottom: 52px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Section block */
+    .tc-section {
+      margin-bottom: 44px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #f0eded;
+    }
+    .tc-section:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .tc-section-num {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .tc-section-num::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 1px;
+    }
+
+    .tc-section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+
+    .tc-section-body {
+      font-size: 0.875rem;
+      color: #555;
+      line-height: 1.85;
+    }
+    .tc-section-body p {
+      margin-bottom: 10px;
+    }
+    .tc-section-body p:last-child {
+      margin-bottom: 0;
+    }
+    .tc-section-body ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .tc-section-body ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: #555;
+      line-height: 1.7;
+    }
+    .tc-section-body ul li .tc-check {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(184, 41, 47, 0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .tc-section-body ul li .tc-check i {
+      font-size: 0.55rem;
+      color: var(--primary);
+    }
+
+    /* Highlight box (for specs like table) */
+    .tc-highlight-box {
+      background: rgba(184, 41, 47, 0.04);
+      border: 1px solid rgba(184, 41, 47, 0.12);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.8;
+    }
+    .tc-highlight-box .tc-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .tc-highlight-box .tc-row:last-child {
+      margin-bottom: 0;
+    }
+    .tc-highlight-box .tc-label {
+      min-width: 180px;
+      font-weight: 600;
+      color: #333;
+      font-size: 0.83rem;
+    }
+    .tc-highlight-box .tc-value {
+      color: #666;
+    }
+    @media (max-width: 600px) {
+      .tc-highlight-box .tc-row { flex-direction: column; gap: 2px; }
+      .tc-highlight-box .tc-label { min-width: unset; }
+    }
+
+    /* ── Signature Block ──────────────────────────────────── */
+    .terms-signature {
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 2px solid #eee;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .terms-signature-date {
+      font-size: 0.82rem;
+      color: #888;
+      font-style: italic;
+    }
+    .terms-signature-date strong {
+      color: #444;
+      font-style: normal;
+    }
+    .terms-signature-authority {
+      text-align: right;
+    }
+    .terms-signature-authority .sig-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .terms-signature-authority .sig-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #333;
+    }
+    @media (max-width: 540px) {
+      .terms-signature { flex-direction: column; gap: 20px; }
+      .terms-signature-authority { text-align: left; }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+<div class="page-content">
+
+  <!-- ============================================================
+       TERMS BANNER
+  ============================================================ -->
+  <section class="terms-banner" aria-label="Terms and Conditions banner">
+    <div class="terms-banner-inner">
+      <span class="terms-banner-eyebrow">
+        <i class="fa-solid fa-scale-balanced"></i> Legal Information
+      </span>
+      <h1 class="terms-banner-title">Terms And Conditions</h1>
+      <p class="terms-banner-desc">
+        Please read these terms carefully before entering into any agreement with
+        Lucky Enterprises / SS Coconuts. These terms govern all supply and commercial transactions.
+      </p>
+      <div class="terms-banner-divider" aria-hidden="true"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TERMS CONTENT
+  ============================================================ -->
+  <section class="terms-page" aria-label="Terms and Conditions content">
+    <div class="terms-container">
+
+      <!-- Intro -->
+      <p class="terms-intro">
+        These Terms and Conditions constitute a legally binding agreement between Lucky Enterprises
+        (hereinafter referred to as <strong>"the Company"</strong>) and the purchasing party
+        (hereinafter referred to as <strong>"the Buyer"</strong>). By placing an order or entering
+        into a supply arrangement with the Company, the Buyer agrees to be bound by the following
+        terms and conditions in their entirety.
+      </p>
+
+
+      <!-- 01. Agreement Scope -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">01</span>
+        <h2 class="tc-section-title">Agreement Scope</h2>
+        <div class="tc-section-body">
+          <p>
+            These Terms and Conditions apply to all supply orders, contracts, and commercial transactions
+            between Lucky Enterprises and the Buyer. No variation of these terms shall be binding unless
+            agreed upon in writing and signed by an authorised representative of the Company.
+          </p>
+          <p>
+            By confirming an order — verbally, in writing, or electronically — the Buyer accepts
+            these terms in full and waives any conflicting terms set forth in the Buyer's own
+            purchase orders or documents.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- 02. Product Specifications -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">02</span>
+        <h2 class="tc-section-title">Product Specifications</h2>
+        <div class="tc-section-body">
+          <p>
+            All products are supplied subject to the following specifications unless a custom
+            specification is agreed upon in writing prior to the order confirmation:
+          </p>
+          <div class="tc-highlight-box">
+            <div class="tc-row">
+              <span class="tc-label">Variety</span>
+              <span class="tc-value">East Coast Tall (ECT), West Coast Tall (WCT) — as specified per order</span>
+            </div>
+            <div class="tc-row">
+              <span class="tc-label">Grade</span>
+              <span class="tc-value">A1 / Export Grade / Domestic Grade (per buyer's specification)</span>
+            </div>
+            <div class="tc-row">
+              <span class="tc-label">Minimum Dry Weight</span>
+              <span class="tc-value">As per agreed grade and market standard at time of order</span>
+            </div>
+            <div class="tc-row">
+              <span class="tc-label">Packaging</span>
+              <span class="tc-value">Gunny bags / mesh bags / open bulk — as mutually agreed</span>
+            </div>
+            <div class="tc-row">
+              <span class="tc-label">Moisture &amp; Freshness</span>
+              <span class="tc-value">Conforming to applicable FSSAI / APEDA export norms</span>
+            </div>
+          </div>
+          <p style="margin-top:12px;">
+            The Company reserves the right to make minor variations in specifications due to seasonal
+            and natural factors, provided such variations do not substantially affect the commercial
+            value of the goods.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- 03. Pricing & Valuation -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">03</span>
+        <h2 class="tc-section-title">Pricing &amp; Valuation</h2>
+        <div class="tc-section-body">
+          <p>
+            Prices are established at the time an order is confirmed in writing and shall remain firm
+            for that specific order unless otherwise mutually agreed. The Company is not bound to
+            honour previously quoted prices for subsequent orders.
+          </p>
+          <p>
+            All prices are quoted exclusive of applicable Goods and Services Tax (GST), loading
+            charges, freight, insurance, and any export documentation fees unless explicitly stated
+            otherwise in the quotation or invoice. Any taxes or levies imposed by governmental
+            authorities subsequent to the order confirmation shall be borne by the Buyer.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- 04. Logistics & Delivery -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">04</span>
+        <h2 class="tc-section-title">Logistics &amp; Delivery</h2>
+        <div class="tc-section-body">
+          <p>
+            Delivery timelines are estimates based on prevailing logistics conditions and are provided
+            in good faith. The Company shall not be held liable for delays caused by third-party
+            transporters, weather conditions, or circumstances beyond the Company's reasonable control.
+          </p>
+          <p>
+            Risk of loss or damage to goods passes to the Buyer upon handover to the transporter or
+            at the point of loading, whichever occurs first. The Buyer is responsible for arranging
+            adequate transit insurance unless an express written agreement states otherwise.
+          </p>
+          <ul>
+            <li>
+              <span class="tc-check"><i class="fa-solid fa-check"></i></span>
+              <span>Domestic deliveries: typically dispatched within 2–5 working days of confirmed payment.</span>
+            </li>
+            <li>
+              <span class="tc-check"><i class="fa-solid fa-check"></i></span>
+              <span>Export orders: shipment timelines subject to customs, phytosanitary clearances, and vessel schedules.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- 05. Payment Framework -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">05</span>
+        <h2 class="tc-section-title">Payment Framework</h2>
+        <div class="tc-section-body">
+          <p>
+            Unless otherwise agreed in writing, payment terms are as follows:
+          </p>
+          <ul>
+            <li>
+              <span class="tc-check"><i class="fa-solid fa-check"></i></span>
+              <span>Immediate payment or advance: required for first-time buyers and export orders.</span>
+            </li>
+            <li>
+              <span class="tc-check"><i class="fa-solid fa-check"></i></span>
+              <span>Regular buyers: payment due within <strong>7 days</strong> of invoice date unless a separate credit arrangement is in place.</span>
+            </li>
+          </ul>
+          <p style="margin-top: 12px;">
+            The Company reserves the right to charge interest at <strong>2% per month</strong> on overdue balances.
+            The Company may suspend future deliveries without notice in the event of outstanding payments.
+            All bank charges for wire transfers, LC issuance, and foreign currency conversions are to
+            be borne by the Buyer.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- 06. Inspection Rights -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">06</span>
+        <h2 class="tc-section-title">Inspection Rights</h2>
+        <div class="tc-section-body">
+          <p>
+            The Buyer may arrange for an inspection of goods at the Company's premises prior to
+            dispatch, provided at least <strong>48 hours'</strong> written notice is given.
+            All inspection costs — including the fees of any third-party inspection agency — shall
+            be borne by the Buyer unless otherwise agreed.
+          </p>
+          <p>
+            Upon receipt of goods, the Buyer must inspect them within <strong>24 hours</strong>
+            and notify the Company in writing of any discrepancy, shortage, or quality concern.
+            Claims raised beyond this window may not be entertained by the Company.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- 07. Force Majeure -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">07</span>
+        <h2 class="tc-section-title">Force Majeure</h2>
+        <div class="tc-section-body">
+          <p>
+            Neither party shall be liable for failure or delay in performing obligations caused by
+            events beyond reasonable control, including but not limited to: acts of God, floods,
+            drought, cyclones, fires, earthquakes, government restrictions, port congestion, strikes,
+            lockouts, pandemics, or war.
+          </p>
+          <p>
+            The party affected by a force majeure event shall promptly notify the other in writing.
+            If the force majeure condition persists for more than <strong>30 days</strong>, either
+            party may terminate the affected order without further liability, subject to fair
+            settlement of any amounts already due.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- 08. Liability Limitations -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">08</span>
+        <h2 class="tc-section-title">Liability Limitations</h2>
+        <div class="tc-section-body">
+          <p>
+            The Company's total liability to the Buyer under any claim or series of claims arising
+            from a single transaction shall not exceed the invoice value of that transaction.
+            The Company shall not be liable for any indirect, consequential, special, or punitive
+            damages, including loss of profits, loss of market, or damage to reputation, arising
+            from the supply or failure to supply goods.
+          </p>
+          <p>
+            Nothing in these terms limits liability for death or personal injury caused by the
+            Company's gross negligence, or for fraud or fraudulent misrepresentation.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- 09. Intellectual Property -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">09</span>
+        <h2 class="tc-section-title">Intellectual Property</h2>
+        <div class="tc-section-body">
+          <p>
+            All trademarks, trade names, logos, and branding associated with SS Coconuts and
+            Lucky Enterprises remain the sole property of the Company. The Buyer may not use
+            the Company's name, logo, or branding in any marketing material, label, or
+            promotional content without prior written consent.
+          </p>
+          <p>
+            Any product information, pricing data, or proprietary knowledge shared by the Company
+            shall be treated as confidential and shall not be disclosed to third parties without
+            explicit written authorisation.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- 10. Termination Protocol -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">10</span>
+        <h2 class="tc-section-title">Termination Protocol</h2>
+        <div class="tc-section-body">
+          <p>
+            Either party may terminate an ongoing supply arrangement by providing
+            <strong>30 days'</strong> written notice to the other party. The Company may
+            terminate immediately and without notice if the Buyer:
+          </p>
+          <ul>
+            <li>
+              <span class="tc-check"><i class="fa-solid fa-check"></i></span>
+              <span>Fails to make payment within the agreed credit period.</span>
+            </li>
+            <li>
+              <span class="tc-check"><i class="fa-solid fa-check"></i></span>
+              <span>Becomes insolvent, enters liquidation, or ceases trading.</span>
+            </li>
+            <li>
+              <span class="tc-check"><i class="fa-solid fa-check"></i></span>
+              <span>Commits a material breach of these Terms and Conditions.</span>
+            </li>
+          </ul>
+          <p style="margin-top: 12px;">
+            Upon termination, all outstanding amounts shall become immediately due and payable.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- 11. Confidentiality -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">11</span>
+        <h2 class="tc-section-title">Confidentiality</h2>
+        <div class="tc-section-body">
+          <p>
+            Both parties agree to maintain the confidentiality of all non-public business information
+            shared during the course of their commercial relationship. This obligation shall survive
+            the termination of any agreement by a period of <strong>3 years</strong>.
+          </p>
+          <p>
+            Confidential information does not include information that: (a) was already in the
+            public domain at the time of disclosure; (b) becomes publicly known through no fault of
+            the receiving party; or (c) is required to be disclosed by law or regulatory authority.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- 12. Governing Law -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">12</span>
+        <h2 class="tc-section-title">Governing Law</h2>
+        <div class="tc-section-body">
+          <p>
+            These Terms and Conditions shall be governed by and construed in accordance with the
+            laws of the <strong>Republic of India</strong>. Any disputes arising out of or in
+            connection with these terms shall be subject to the exclusive jurisdiction of the
+            courts of <strong>Thanjavur, Tamil Nadu</strong>.
+          </p>
+          <p>
+            In the event of any dispute, the parties shall first attempt to resolve the matter
+            through good-faith negotiation. If unresolved within 30 days, the dispute may be
+            referred to arbitration under the Arbitration and Conciliation Act, 1996.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- 13. Final Provisions -->
+      <div class="tc-section reveal">
+        <span class="tc-section-num">13</span>
+        <h2 class="tc-section-title">Final Provisions</h2>
+        <div class="tc-section-body">
+          <p>
+            If any provision of these Terms and Conditions is found by a court of competent
+            jurisdiction to be invalid, unlawful, or unenforceable, that provision shall be
+            deemed severed from the remaining terms, which shall continue in full force and effect.
+          </p>
+          <p>
+            These Terms and Conditions represent the entire agreement between the parties with
+            respect to the subject matter herein and supersede all prior agreements,
+            representations, and understandings, whether oral or written.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- Signature / Date -->
+      <div class="terms-signature reveal">
+        <div class="terms-signature-date">
+          <p>Effective Date: <strong>January 01, 2025</strong></p>
+          <p style="margin-top:4px; font-size:.8rem;">Last updated: April 2026</p>
+        </div>
+        <div class="terms-signature-authority">
+          <p class="sig-title">Legal &amp; Compliance Division</p>
+          <p class="sig-name">Lucky Enterprises — SS Coconuts</p>
+          <p style="font-size:.78rem; color:#aaa; margin-top:4px;">Thanjavur, Tamil Nadu, India</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- /.page-content -->
+
+<!-- Scripts -->
+<script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -38,11 +38,11 @@
 
       <!-- CTA + Hamburger -->
       <div class="flex items-center gap-3">
-        <a href="${root}contact.html" id="navCta"
+        <button id="navCta" onclick="openQuoteModal()"
           class="hidden md:inline-flex btn btn-primary text-sm rounded-md"
           style="padding:10px 20px;">
           <i class="fa-solid fa-paper-plane" style="font-size:11px;"></i> Get a Quote
-        </a>
+        </button>
         <button id="menuBtn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors" aria-label="Open menu">
           <i class="fa-solid fa-bars text-gray-700 text-xl"></i>
         </button>
@@ -64,9 +64,122 @@
       <li><a href="${root}products.html" class="font-medium text-gray-700 hover:text-primary transition-colors">Products</a></li>
       <li><a href="${root}contact.html"  class="font-medium text-gray-700 hover:text-primary transition-colors">Contact Us</a></li>
       <li class="pt-2">
-        <a href="${root}contact.html" class="btn btn-primary w-full justify-center rounded-md">Get a Quote</a>
+        <button onclick="openQuoteModal()" class="btn btn-primary w-full justify-center rounded-md">Get a Quote</button>
       </li>
     </ul>
+  </div>
+
+  <!-- ============================================================
+       QUOTE MODAL
+  ============================================================ -->
+  <div id="quoteModal" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle"
+       style="display:none; position:fixed; inset:0; z-index:10000; align-items:center; justify-content:center; padding:16px;">
+    <!-- Backdrop -->
+    <div id="quoteBackdrop"
+         style="position:absolute; inset:0; background:rgba(0,0,0,.52); backdrop-filter:blur(4px);">
+    </div>
+    <!-- Panel -->
+    <div style="position:relative; z-index:1; background:#fff; border-radius:16px;
+                box-shadow:0 24px 64px rgba(0,0,0,.22); width:100%; max-width:420px;
+                overflow:hidden; animation:quoteSlideIn .28s cubic-bezier(.34,1.56,.64,1);">
+
+      <!-- Header -->
+      <div style="background:var(--primary); padding:18px 22px; display:flex; align-items:center; justify-content:space-between;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div style="width:34px; height:34px; background:rgba(255,255,255,.2); border-radius:50%;
+                      display:flex; align-items:center; justify-content:center;">
+            <i class="fa-solid fa-paper-plane" style="color:#fff; font-size:13px;"></i>
+          </div>
+          <div>
+            <p id="quoteModalTitle" style="font-weight:700; color:#fff; font-size:.95rem; margin:0;">Request a Quote</p>
+            <p style="color:rgba(255,255,255,.75); font-size:.72rem; margin:0;">We'll get back within 24 hours</p>
+          </div>
+        </div>
+        <button id="quoteCloseBtn" aria-label="Close quote modal"
+                style="background:rgba(255,255,255,.18); border:none; border-radius:50%; width:30px; height:30px;
+                       display:flex; align-items:center; justify-content:center; cursor:pointer; transition:.2s;">
+          <i class="fa-solid fa-xmark" style="color:#fff; font-size:14px;"></i>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div style="padding:22px;">
+
+        <!-- Success state (hidden by default) -->
+        <div id="quoteSuccess" style="display:none; text-align:center; padding:16px 0;">
+          <div style="width:56px; height:56px; background:#ecfdf5; border-radius:50%;
+                      display:flex; align-items:center; justify-content:center; margin:0 auto 14px;">
+            <i class="fa-solid fa-circle-check" style="color:#16a34a; font-size:26px;"></i>
+          </div>
+          <p style="font-weight:700; font-size:1rem; color:#111; margin-bottom:6px;">Quote Requested!</p>
+          <p style="font-size:.8rem; color:#666;">Thank you! Our team will contact you shortly.</p>
+        </div>
+
+        <!-- Form -->
+        <form id="quoteForm" novalidate>
+          <div style="display:grid; gap:12px;">
+
+            <div>
+              <label style="font-size:.75rem; font-weight:600; color:#444; display:block; margin-bottom:5px;">Your Name *</label>
+              <input id="qName" type="text" placeholder="e.g. Rajan Kumar" required
+                     style="width:100%; border:1.5px solid #e0e0e0; border-radius:8px; padding:9px 12px;
+                            font-size:.84rem; font-family:'Poppins',sans-serif; outline:none; transition:.2s;
+                            color:#111;" />
+            </div>
+
+            <div>
+              <label style="font-size:.75rem; font-weight:600; color:#444; display:block; margin-bottom:5px;">Phone Number *</label>
+              <input id="qPhone" type="tel" placeholder="+91 XXXXX XXXXX" required
+                     style="width:100%; border:1.5px solid #e0e0e0; border-radius:8px; padding:9px 12px;
+                            font-size:.84rem; font-family:'Poppins',sans-serif; outline:none; transition:.2s;
+                            color:#111;" />
+            </div>
+
+            <div>
+              <label style="font-size:.75rem; font-weight:600; color:#444; display:block; margin-bottom:5px;">Product Interest</label>
+              <select id="qProduct"
+                      style="width:100%; border:1.5px solid #e0e0e0; border-radius:8px; padding:9px 12px;
+                             font-size:.84rem; font-family:'Poppins',sans-serif; outline:none;
+                             background:#fff; color:#444; transition:.2s;">
+                <option value="">Select a product…</option>
+                <option>Pollachi Coconut</option>
+                <option>Semi Husked Coconut</option>
+                <option>Brown Fresh Coconut</option>
+                <option>Peravurani Coconut</option>
+                <option>Export Semi Husked Coconut</option>
+                <option>Other / Not Sure</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size:.75rem; font-weight:600; color:#444; display:block; margin-bottom:5px;">Estimated Quantity</label>
+              <input id="qQty" type="text" placeholder="e.g. 500 nuts / 2 tonnes"
+                     style="width:100%; border:1.5px solid #e0e0e0; border-radius:8px; padding:9px 12px;
+                            font-size:.84rem; font-family:'Poppins',sans-serif; outline:none; transition:.2s;
+                            color:#111;" />
+            </div>
+
+          </div>
+
+          <!-- Error msg -->
+          <p id="quoteError" style="display:none; font-size:.75rem; color:var(--primary); margin-top:10px;"></p>
+
+          <button type="submit"
+                  style="margin-top:16px; width:100%; background:var(--primary); color:#fff;
+                         border:none; border-radius:8px; padding:11px;
+                         font-family:'Poppins',sans-serif; font-size:.88rem; font-weight:600;
+                         cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;
+                         transition:.25s;">
+            <i class="fa-solid fa-paper-plane" style="font-size:12px;"></i> Submit Request
+          </button>
+
+          <p style="text-align:center; font-size:.72rem; color:#999; margin-top:10px;">
+            Or call us: <a href="tel:+919360311236" style="color:var(--primary); font-weight:600;">+91 9360311236</a>
+          </p>
+        </form>
+
+      </div>
+    </div>
   </div>
   `;
 
@@ -101,7 +214,7 @@
             <ul class="space-y-2">
               <li><a href="${root}contact.html" class="footer-link">Bulk Enquiry / Get Quote</a></li>
               <li><a href="#" class="footer-link">How to Order</a></li>
-              <li><a href="#" class="footer-link">FAQs</a></li>
+              <li><a href="${root}faq.html" class="footer-link">FAQs</a></li>
             </ul>
           </div>
         </div>
@@ -120,8 +233,8 @@
           <div>
             <h4 style="font-size:.7rem; letter-spacing:.1em;" class="font-bold text-gray-900 uppercase tracking-widest mb-4">Legal Policies</h4>
             <ul class="space-y-2">
-              <li><a href="#" class="footer-link">Privacy Policy</a></li>
-              <li><a href="#" class="footer-link">Terms &amp; Conditions</a></li>
+              <li><a href="${root}privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+              <li><a href="${root}terms.html" class="footer-link">Terms &amp; Conditions</a></li>
             </ul>
           </div>
         </div>
@@ -239,3 +352,55 @@
   });
 
 })();
+
+// ── Quote Modal helpers (global scope so onclick= works) ────────────────────
+function openQuoteModal() {
+  const modal = document.getElementById('quoteModal');
+  if (!modal) return;
+  // Reset to form view
+  document.getElementById('quoteSuccess').style.display = 'none';
+  document.getElementById('quoteForm').style.display    = 'block';
+  document.getElementById('quoteError').style.display   = 'none';
+  document.getElementById('quoteForm').reset();
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  // Close mobile drawer if open
+  document.getElementById('mobileMenu')?.classList.remove('open');
+}
+function closeQuoteModal() {
+  const modal = document.getElementById('quoteModal');
+  if (!modal) return;
+  modal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// Wire up close button + backdrop after DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('quoteCloseBtn')?.addEventListener('click', closeQuoteModal);
+  document.getElementById('quoteBackdrop')?.addEventListener('click', closeQuoteModal);
+
+  // Form submission
+  document.getElementById('quoteForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name  = document.getElementById('qName').value.trim();
+    const phone = document.getElementById('qPhone').value.trim();
+    const errEl = document.getElementById('quoteError');
+    if (!name || !phone) {
+      errEl.textContent = 'Please fill in your name and phone number.';
+      errEl.style.display = 'block';
+      return;
+    }
+    errEl.style.display = 'none';
+    // Show success
+    document.getElementById('quoteForm').style.display    = 'none';
+    document.getElementById('quoteSuccess').style.display = 'block';
+    // Auto-close after 3 seconds
+    setTimeout(closeQuoteModal, 3000);
+  });
+
+  // Focus-border highlight for inputs
+  document.querySelectorAll('#quoteForm input, #quoteForm select').forEach(el => {
+    el.addEventListener('focus',  () => el.style.borderColor = 'var(--primary)');
+    el.addEventListener('blur',   () => el.style.borderColor = '#e0e0e0');
+  });
+});

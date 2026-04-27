@@ -41,8 +41,8 @@
     <div class="absolute inset-0 z-0 pointer-events-none" style="background: url('assets/images/homepage/hero_bg.png') center top/cover no-repeat; opacity: 0.85;"></div>
     
     <div class="max-w-4xl mx-auto text-center relative z-10 mb-14">
-      <h1 class="text-2xl md:text-4xl font-black text-primary italic mb-4 font-serif">Get in Touch with a Trusted Coconut Supplier</h1>
-      <p class="text-gray-600 max-w-xl mx-auto text-xs md:text-sm leading-relaxed">
+      <h1 class="font-black text-primary italic mb-4 font-serif" style="font-size:clamp(1.75rem,4.5vw,2.75rem);">Get in Touch with a Trusted Coconut Supplier</h1>
+      <p class="text-gray-600 max-w-xl mx-auto text-sm leading-relaxed">
         Have a bulk requirement or export enquiry? Our team is ready to assist you with reliable supply and quick responses.
       </p>
     </div>
@@ -105,30 +105,30 @@
         <p class="text-xs text-gray-500">Share your requirement and our team will get back to you shortly.</p>
       </div>
 
-      <form class="space-y-6">
+      <form id="contactForm" class="space-y-6" novalidate>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Full Name -->
           <div>
-            <label class="block text-[0.7rem] font-bold text-gray-700 mb-2">Full Name</label>
-            <input type="text" class="w-full bg-gray-50 border border-gray-200 text-xs p-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Enter your full name" />
+            <label class="block text-[0.7rem] font-bold text-gray-700 mb-2">Full Name *</label>
+            <input id="cf-fullName" type="text" required class="w-full bg-gray-50 border border-gray-200 text-xs p-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Enter your full name" />
           </div>
           <!-- Company Name -->
           <div>
             <label class="block text-[0.7rem] font-bold text-gray-700 mb-2">Company Name</label>
-            <input type="text" class="w-full bg-gray-50 border border-gray-200 text-xs p-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Your organization" />
+            <input id="cf-companyName" type="text" class="w-full bg-gray-50 border border-gray-200 text-xs p-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Your organization" />
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Phone Number -->
           <div>
-            <label class="block text-[0.7rem] font-bold text-gray-700 mb-2">Phone Number</label>
-            <input type="tel" class="w-full bg-gray-50 border border-gray-200 text-xs p-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="+1 (555) 000-0000" />
+            <label class="block text-[0.7rem] font-bold text-gray-700 mb-2">Phone Number *</label>
+            <input id="cf-phone" type="tel" required class="w-full bg-gray-50 border border-gray-200 text-xs p-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="+91 9876543210" />
           </div>
           <!-- Email Address -->
           <div>
-            <label class="block text-[0.7rem] font-bold text-gray-700 mb-2">Email Address</label>
-            <input type="email" class="w-full bg-gray-50 border border-gray-200 text-xs p-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="name@company.com" />
+            <label class="block text-[0.7rem] font-bold text-gray-700 mb-2">Email Address *</label>
+            <input id="cf-email" type="email" required class="w-full bg-gray-50 border border-gray-200 text-xs p-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="name@company.com" />
           </div>
         </div>
 
@@ -136,7 +136,7 @@
           <!-- Requirement Type -->
           <div>
             <label class="block text-[0.7rem] font-bold text-gray-700 mb-2">Requirement Type</label>
-            <select class="w-full bg-gray-50 border border-gray-200 text-xs p-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all text-gray-600 appearance-none bg-no-repeat" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-position: right 1rem center; background-size: 0.65em auto;">
+            <select id="cf-requirementType" class="w-full bg-gray-50 border border-gray-200 text-xs p-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all text-gray-600 appearance-none bg-no-repeat" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-position: right 1rem center; background-size: 0.65em auto;">
               <option>Bulk Purchase</option>
               <option>Export Order</option>
               <option>Domestic Distribution</option>
@@ -146,7 +146,7 @@
           <!-- Product Required -->
           <div>
             <label class="block text-[0.7rem] font-bold text-gray-700 mb-2">Product Required</label>
-            <select class="w-full bg-gray-50 border border-gray-200 text-xs p-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all text-gray-600 appearance-none bg-no-repeat" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-position: right 1rem center; background-size: 0.65em auto;">
+            <select id="cf-product" class="w-full bg-gray-50 border border-gray-200 text-xs p-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all text-gray-600 appearance-none bg-no-repeat" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-position: right 1rem center; background-size: 0.65em auto;">
               <option>Pollachi Coconuts</option>
               <option>Semi Husked Coconuts</option>
               <option>Brown Fresh Coconuts</option>
@@ -158,19 +158,26 @@
           <!-- Quantity Required -->
           <div>
             <label class="block text-[0.7rem] font-bold text-gray-700 mb-2">Quantity Required</label>
-            <input type="text" class="w-full bg-gray-50 border border-gray-200 text-xs p-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="e.g. 5000 units / MT" />
+            <input id="cf-quantity" type="text" class="w-full bg-gray-50 border border-gray-200 text-xs p-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="e.g. 5000 units / MT" />
           </div>
         </div>
 
         <!-- Message -->
         <div>
           <label class="block text-[0.7rem] font-bold text-gray-700 mb-2">Message</label>
-          <textarea class="w-full bg-gray-50 border border-gray-200 text-xs p-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" rows="4" placeholder="Please detail your specific requirements..."></textarea>
+          <textarea id="cf-message" class="w-full bg-gray-50 border border-gray-200 text-xs p-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" rows="4" placeholder="Please detail your specific requirements..."></textarea>
         </div>
 
+        <!-- Status Message -->
+        <div id="cf-status" class="hidden text-xs font-semibold px-4 py-3 rounded-lg"></div>
+
         <div>
-          <button type="submit" class="bg-primary text-white text-xs font-bold uppercase tracking-widest py-3 px-8 rounded hover:bg-primary-dark transition-colors shadow-lg hover:-translate-y-0.5 transform duration-200">
-            Request a Quote
+          <button id="cf-submit" type="submit" class="bg-primary text-white text-xs font-bold uppercase tracking-widest py-3 px-8 rounded hover:bg-primary-dark transition-colors shadow-lg hover:-translate-y-0.5 transform duration-200 flex items-center gap-2">
+            <span id="cf-btn-text">Request a Quote</span>
+            <svg id="cf-spinner" class="hidden animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+            </svg>
           </button>
         </div>
       </form>
@@ -197,5 +204,69 @@
 
 </div>
 <script src="assets/js/script.js"></script>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const btn    = document.getElementById('cf-submit');
+    const btnTxt = document.getElementById('cf-btn-text');
+    const spinner = document.getElementById('cf-spinner');
+    const status = document.getElementById('cf-status');
+
+    const fullName = document.getElementById('cf-fullName').value.trim();
+    const email    = document.getElementById('cf-email').value.trim();
+    const phone    = document.getElementById('cf-phone').value.trim();
+
+    // Client-side validation
+    if (!fullName || !email || !phone) {
+      status.textContent = '⚠️ Please fill in your name, email, and phone number.';
+      status.className = 'text-xs font-semibold px-4 py-3 rounded-lg bg-yellow-50 text-yellow-800 border border-yellow-200';
+      return;
+    }
+
+    // Loading state
+    btn.disabled = true;
+    btnTxt.textContent = 'Sending…';
+    spinner.classList.remove('hidden');
+    status.className = 'hidden';
+
+    const payload = {
+      fullName,
+      companyName:     document.getElementById('cf-companyName').value.trim(),
+      phone,
+      email,
+      requirementType: document.getElementById('cf-requirementType').value,
+      product:         document.getElementById('cf-product').value,
+      quantity:        document.getElementById('cf-quantity').value.trim(),
+      message:         document.getElementById('cf-message').value.trim(),
+    };
+
+    try {
+      const res  = await fetch('http://localhost:3000/api/contact', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(payload),
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        status.textContent = '✅ ' + data.message;
+        status.className = 'text-xs font-semibold px-4 py-3 rounded-lg bg-green-50 text-green-800 border border-green-200';
+        document.getElementById('contactForm').reset();
+      } else {
+        status.textContent = '❌ ' + (data.error || 'Something went wrong. Please try again.');
+        status.className = 'text-xs font-semibold px-4 py-3 rounded-lg bg-red-50 text-red-800 border border-red-200';
+      }
+    } catch (err) {
+      status.textContent = '❌ Network error. Please check your connection and try again.';
+      status.className = 'text-xs font-semibold px-4 py-3 rounded-lg bg-red-50 text-red-800 border border-red-200';
+    } finally {
+      btn.disabled = false;
+      btnTxt.textContent = 'Request a Quote';
+      spinner.classList.add('hidden');
+      status.classList.remove('hidden');
+    }
+  });
+</script>
 </body>
 </html>

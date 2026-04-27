@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/images/logo/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQs — SS Coconuts | Frequently Asked Questions</title>
+  <meta name="description" content="Find answers to frequently asked questions about SS Coconuts, bulk ordering, international export, product quality, and shipping details." />
+
+  <!-- Tailwind CSS v2 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- SS Coconuts Custom Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Shared Components (navbar + footer) -->
+  <script src="assets/js/components.js" defer></script>
+
+  <style>
+    /* ── FAQ Banner ────────────────────────────────────────── */
+    .faq-banner {
+      position: relative;
+      width: 100%;
+      min-height: 280px;
+      background: url("assets/images/homepage/hero_bg.png") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .faq-banner-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 72px 24px 60px;
+    }
+    .faq-banner-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: rgba(184, 41, 47, 0.08);
+      border: 1px solid rgba(184, 41, 47, 0.18);
+      border-radius: 50px;
+      padding: 6px 18px;
+      margin-bottom: 22px;
+    }
+    .faq-banner-title {
+      font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+      font-weight: 900;
+      font-style: italic;
+      color: var(--primary);
+      line-height: 1.1;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .faq-banner-desc {
+      font-size: 0.875rem;
+      color: #000000;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    @media (max-width: 767px) {
+      .faq-banner { min-height: 200px; }
+      .faq-banner-inner { padding: 48px 20px 40px; }
+      .faq-banner-title { font-size: 1.75rem; }
+    }
+
+    /* ── FAQ Accordion ─────────────────────────────────────── */
+    .faq-section {
+      background: #fdf6f0;
+      padding: 80px 24px;
+      min-height: 50vh;
+    }
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .faq-item {
+      background: #fff;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+    .faq-item.active {
+      border-color: rgba(184, 41, 47, 0.3);
+      box-shadow: 0 8px 24px rgba(184, 41, 47, 0.08);
+    }
+    
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 24px 30px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      transition: color 0.3s;
+    }
+    .faq-item.active .faq-question {
+      color: var(--primary);
+    }
+    .faq-question:hover {
+      color: var(--primary);
+    }
+    
+    .faq-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(184, 41, 47, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      flex-shrink: 0;
+      margin-left: 16px;
+      transition: transform 0.3s ease, background 0.3s;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      background: var(--primary);
+      color: #fff;
+    }
+    
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-in-out;
+    }
+    .faq-answer-inner {
+      padding: 0 30px 24px 30px;
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      border-top: 1px solid rgba(0,0,0,0.03);
+      margin-top: -8px;
+      padding-top: 20px;
+    }
+    @media (max-width: 640px) {
+      .faq-question { padding: 20px; font-size: 0.95rem; }
+      .faq-answer-inner { padding: 0 20px 20px 20px; }
+      .faq-icon { width: 28px; height: 28px; font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+<div class="page-content">
+
+  <!-- ============================================================
+       FAQ BANNER
+  ============================================================ -->
+  <section class="faq-banner" aria-label="FAQ banner">
+    <div class="faq-banner-inner">
+      <span class="faq-banner-eyebrow">
+        <i class="fa-regular fa-circle-question"></i> Support &amp; Help
+      </span>
+      <h1 class="faq-banner-title">Frequently Asked Questions</h1>
+      <p class="faq-banner-desc">
+        Find quick answers to common questions about our coconut supply, export processes, pricing, and logistics.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ ACCORDION
+  ============================================================ -->
+  <section class="faq-section" aria-label="FAQ content">
+    <div class="faq-container">
+      
+      <!-- Item 1 -->
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>What types of coconuts do you supply?</span>
+          <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            We supply a variety of premium coconuts including Pollachi Coconuts, Semi Husked Coconuts, Brown Fresh Coconuts, and Peravurani Coconuts. We cater to both domestic requirements and international export markets with carefully graded products.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>Do you handle international export orders?</span>
+          <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Yes, absolutely! We specialize in exporting high-quality coconuts to global markets, particularly across the Middle East. We ensure cold-chain integrity from our estate to the port and manage all necessary export documentation, including phytosanitary certificates.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>What is the minimum order quantity (MOQ) for bulk orders?</span>
+          <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Our minimum order quantity varies depending on the destination (domestic vs. international) and the specific product type. Typically, international export orders are fulfilled in standard 20ft or 40ft shipping containers. Please contact our sales team with your exact requirements for a customized quote.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>How do you ensure the quality of your coconuts?</span>
+          <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Quality is our top priority. We source directly from trusted farms in Tamil Nadu. Every coconut undergoes careful manual inspection and is graded based on size, maturity, husk thickness, and water volume according to ISO 22000 standards before being packed.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>What are your standard payment terms?</span>
+          <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            For international export orders, we typically require an Irrevocable Letter of Credit (L/C) at sight or a Telegraphic Transfer (T/T) with a 40% advance deposit and the balance payable against scanned shipping documents. Domestic terms may vary and can be discussed directly with our team.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>How long does shipping and delivery take?</span>
+          <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Domestic deliveries across India are usually dispatched within 2–5 working days of confirmed payment. Export shipment timelines depend on customs clearance, phytosanitary checks, and vessel schedules, but we pride ourselves on rapid and reliable logistics.
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- Contact CTA -->
+    <div class="text-center mt-16 reveal">
+      <p class="text-sm text-gray-500 mb-4">Still have questions? We're here to help.</p>
+      <a href="contact.html" class="inline-flex items-center gap-2 bg-primary text-white text-xs font-bold uppercase tracking-widest py-3 px-8 rounded-full hover:bg-primary-dark transition-colors shadow-lg">
+        Contact Our Team
+      </a>
+    </div>
+    
+  </section>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/script.js"></script>
+<script>
+  // FAQ Accordion Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Close all items
+        faqItems.forEach(otherItem => {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.faq-answer').style.maxHeight = null;
+        });
+        
+        // Open the clicked item if it wasn't active
+        if (!isActive) {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
