@@ -37,6 +37,10 @@ body  {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
+.page-content {
+  overflow-x: hidden;
+  width: 100%;
+}
 /* Force Poppins on ALL elements — override Tailwind font-serif */
 .font-serif, .font-sans, [class*="font-"] {
   font-family: 'Poppins', sans-serif !important;
@@ -226,6 +230,9 @@ ul  { list-style: none; }
   animation: spin-slow 18s linear infinite;
   pointer-events: none;
 }
+@media (max-width: 767px) {
+  .hero-ring-outer { inset: -16px; }
+}
 /* Static middle ring */
 .hero-ring-inner {
   position: absolute;
@@ -233,6 +240,9 @@ ul  { list-style: none; }
   border-radius: 50%;
   border: 3px solid rgba(184,41,47,.12);
   pointer-events: none;
+}
+@media (max-width: 767px) {
+  .hero-ring-inner { inset: -6px; }
 }
 /* Glow blob */
 .hero-glow {
@@ -450,6 +460,15 @@ ul  { list-style: none; }
 }
 .reveal-left.visible,
 .reveal-right.visible { opacity: 1; transform: translate(0); }
+
+@media (max-width: 767px) {
+  .reveal-left, .reveal-right {
+    transform: translateY(32px);
+  }
+  .reveal-left.visible, .reveal-right.visible {
+    transform: translateY(0);
+  }
+}
 
 /* ── 17. Floating decorative icons ───────────────────────── */
 @keyframes float {

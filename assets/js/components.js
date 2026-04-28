@@ -245,7 +245,6 @@
           <ul class="space-y-2">
             <li><a href="#" class="footer-link">Quality Assurance</a></li>
             <li><a href="#" class="footer-link">Infrastructure / Sourcing</a></li>
-            <li><a href="#" class="footer-link">Certificates / Compliance</a></li>
             <li><a href="${root}contact.html" class="footer-link">Contact Us</a></li>
           </ul>
         </div>
@@ -286,7 +285,7 @@
     <div style="background:rgba(0,0,0,.12);">
       <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
         <p class="text-gray-700" style="font-size:.72rem;">© 2026 SS Coconuts. All Rights Reserved.</p>
-        <p class="text-gray-700" style="font-size:.72rem;">Designed by Modominds</p>
+        <p class="text-gray-700" style="font-size:.72rem;">Designed by Modo Minds</p>
       </div>
     </div>
   </footer>
@@ -379,23 +378,52 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('quoteCloseBtn')?.addEventListener('click', closeQuoteModal);
   document.getElementById('quoteBackdrop')?.addEventListener('click', closeQuoteModal);
 
-  // Form submission
-  document.getElementById('quoteForm')?.addEventListener('submit', function(e) {
+  // Form submission — POSTs to /api/quote and emails admin
+  document.getElementById('quoteForm')?.addEventListener('submit', async function(e) {
     e.preventDefault();
-    const name  = document.getElementById('qName').value.trim();
-    const phone = document.getElementById('qPhone').value.trim();
-    const errEl = document.getElementById('quoteError');
+    const name     = document.getElementById('qName').value.trim();
+    const phone    = document.getElementById('qPhone').value.trim();
+    const product  = document.getElementById('qProduct').value;
+    const quantity = document.getElementById('qQty').value.trim();
+    const errEl    = document.getElementById('quoteError');
+    const submitBtn = this.querySelector('button[type="submit"]');
+
     if (!name || !phone) {
       errEl.textContent = 'Please fill in your name and phone number.';
       errEl.style.display = 'block';
       return;
     }
     errEl.style.display = 'none';
-    // Show success
-    document.getElementById('quoteForm').style.display    = 'none';
-    document.getElementById('quoteSuccess').style.display = 'block';
-    // Auto-close after 3 seconds
-    setTimeout(closeQuoteModal, 3000);
+
+    // Loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" style="font-size:12px;"></i> Sending…';
+
+    try {
+      const res  = await fetch('http://localhost:3000/api/quote', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ name, phone, product, quantity }),
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        // Show success screen
+        document.getElementById('quoteForm').style.display    = 'none';
+        document.getElementById('quoteSuccess').style.display = 'block';
+        // Auto-close after 3 seconds
+        setTimeout(closeQuoteModal, 3000);
+      } else {
+        errEl.textContent = data.error || 'Something went wrong. Please try again.';
+        errEl.style.display = 'block';
+      }
+    } catch (err) {
+      errEl.textContent = 'Network error. Please check your connection and try again.';
+      errEl.style.display = 'block';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane" style="font-size:12px;"></i> Submit Request';
+    }
   });
 
   // Focus-border highlight for inputs

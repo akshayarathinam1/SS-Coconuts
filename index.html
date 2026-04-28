@@ -17,6 +17,71 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
   <!-- Shared Components (navbar + footer) -->
   <script src="assets/js/components.js" defer></script>
+
+  <style>
+    /* ── About Section – Mobile Layout (image on top, content center-aligned) ── */
+    @media (max-width: 767px) {
+      #about .section {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 40px 20px !important;
+      }
+
+      /* Image block: full width, centered, on top */
+      #about .reveal-left {
+        order: 1 !important;
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 28px;
+      }
+
+      /* Constrain image to feel card-like */
+      #about .reveal-left .relative {
+        width: 100%;
+        max-width: 340px;
+      }
+
+      #about .about-img {
+        border-radius: 20px !important;
+        height: 240px !important;
+        object-fit: cover;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.15) !important;
+      }
+
+      /* Text block: centered, below image */
+      #about .reveal-right {
+        order: 2 !important;
+        width: 100% !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+
+      #about .section-label {
+        text-align: center;
+      }
+
+      #about .section-title {
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 1.25;
+        margin-bottom: 16px;
+      }
+
+      /* Decorative divider */
+      #about .reveal-right::before {
+        content: '';
+        display: block;
+        width: 56px;
+        height: 3px;
+        background: var(--primary);
+        border-radius: 2px;
+        margin: 12px auto 20px;
+      }
+    }
+  </style>
 </head>
 
 <body class="bg-white text-gray-800">
@@ -86,7 +151,7 @@
 
           <!-- Floating Coconut Accent -->
           <img src="assets/images/homepage/coco.png" alt="Fresh Coconut" 
-               class="absolute -bottom-16 -left-16 lg:-bottom-24 lg:-left-32 w-64 lg:w-96 z-20"
+               class="absolute -bottom-8 -left-8 md:-bottom-16 md:-left-16 lg:-bottom-24 lg:-left-32 w-32 md:w-48 lg:w-96 z-20"
                style="animation: float 5s ease-in-out infinite; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.3)); transform: rotate(-10deg);" />
         </div>
       </div>
@@ -282,7 +347,7 @@
     <div class="section max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
       <!-- Image -->
-      <div class="reveal-left visible h-full">
+      <div class="reveal-left visible h-full order-1 lg:order-1">
         <div class="relative h-full">
           <img src="assets/images/about/aboutimg.png" alt="Coconut farm in Tamil Nadu"
             class="w-full h-full object-cover rounded-3xl shadow-xl about-img" />
@@ -290,7 +355,7 @@
       </div>
 
       <!-- Text -->
-      <div class="reveal-right visible">
+      <div class="reveal-right visible order-2 lg:order-2">
         <span class="section-label">About SS Coconuts</span>
         <h2 class="section-title">Our Heritage of Excellence</h2>
         <p class="text-sm text-gray-500 leading-relaxed mb-5">

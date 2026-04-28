@@ -315,6 +315,71 @@
       margin: 0 auto;
     }
 
+    /* ── About Heritage – Mobile Layout ─────────────────────── */
+    @media (max-width: 767px) {
+      /* Force single-column, image on top */
+      #about .section {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 40px 20px !important;
+      }
+
+      /* Image block: full width, centered, image on top */
+      #about .reveal-left {
+        order: 1 !important;
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 28px;
+      }
+
+      /* Constrain the image to feel card-like (like picture 2) */
+      #about .reveal-left .relative {
+        width: 100%;
+        max-width: 340px;
+      }
+
+      #about .about-img {
+        border-radius: 20px !important;
+        height: 240px !important;
+        object-fit: cover;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.15) !important;
+      }
+
+      /* Text block: centered, below image */
+      #about .reveal-right {
+        order: 2 !important;
+        width: 100% !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+
+      #about .section-label {
+        text-align: center;
+      }
+
+      #about .section-title {
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 1.25;
+        margin-bottom: 16px;
+      }
+
+      /* Decorative underline divider (like picture 2) */
+      #about .reveal-right::before {
+        content: '';
+        display: block;
+        width: 56px;
+        height: 3px;
+        background: var(--primary);
+        border-radius: 2px;
+        margin: 12px auto 20px;
+        order: 3;
+      }
+    }
+
     /* ── New CTA ────────────────────────────────────────────── */
     .cta-new {
       position: relative;
@@ -365,7 +430,7 @@
     <div class="section max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
       <!-- Image -->
-      <div class="reveal-left h-full">
+      <div class="reveal-left h-full order-1 lg:order-1">
         <div class="relative h-full">
           <img src="assets/images/about/aboutimg.png" alt="Coconut farm in Tamil Nadu"
             class="w-full h-full object-cover rounded-3xl shadow-xl about-img" />
@@ -373,7 +438,7 @@
       </div>
 
       <!-- Text -->
-      <div class="reveal-right">
+      <div class="reveal-right order-2 lg:order-2 text-center lg:text-left flex flex-col items-center lg:items-start">
         <span class="section-label">About SS Coconuts</span>
         <h2 class="section-title">Our Heritage of Excellence</h2>
         <p class="text-sm text-gray-500 leading-relaxed mb-5">
