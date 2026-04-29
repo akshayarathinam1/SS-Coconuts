@@ -9,6 +9,38 @@
   <meta name="description"
     content="Learn about SS Coconuts — 30+ years of trusted coconut supply from Tamil Nadu to markets across India and the Middle East. Quality, reliability, and heritage since 1989." />
 
+  <!-- Canonical -->
+  <link rel="canonical" href="https://sscoconuts.com/about.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About Us — SS Coconuts | India's Trusted Coconut Supplier" />
+  <meta property="og:description" content="30+ years of trusted coconut supply from Tamil Nadu to markets across India and the Middle East. Quality, reliability, and heritage since 1989." />
+  <meta property="og:image" content="https://sscoconuts.com/assets/images/about/aboutimg.png" />
+  <meta property="og:url" content="https://sscoconuts.com/about.html" />
+  <meta property="og:site_name" content="SS Coconuts" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Us — SS Coconuts | India's Trusted Coconut Supplier" />
+  <meta name="twitter:description" content="30+ years of trusted coconut supply from Tamil Nadu to markets across India and the Middle East." />
+  <meta name="twitter:image" content="https://sscoconuts.com/assets/images/about/aboutimg.png" />
+
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SS Coconuts",
+    "url": "https://sscoconuts.com",
+    "logo": "https://sscoconuts.com/assets/images/logo/logo.png",
+    "description": "SS Coconuts has been a trusted coconut supplier since 1989, sourcing premium coconuts from Tamil Nadu for domestic and export markets across India and the Middle East.",
+    "foundingDate": "1989",
+    "areaServed": ["India", "Middle East"],
+    "sameAs": []
+  }
+  </script>
+
   <!-- Tailwind CSS v2 CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
   <!-- Font Awesome -->
@@ -412,10 +444,10 @@
   <section class="about-page-banner" aria-label="About banner">
     <div class="about-page-banner-inner">
 
-      <h1 class="about-page-banner-title">30+ Years of Trusted Coconut Supply</h1>
+      <h1 class="about-page-banner-title">SS Coconuts — 30+ Years of Trusted Coconut Supply</h1>
       <p class="about-page-banner-desc">
         From the farms of Tamil Nadu to markets across India and
-        the Middle East, Lucky Enterprises has been delivering
+        the Middle East, SS Coconuts has been delivering
         consistent quality and reliable supply since 1989.
       </p>
       <div class="about-page-banner-divider" aria-hidden="true"></div>
@@ -452,9 +484,14 @@
           carefully harvested, graded, and dispatched with the highest quality standards — from
           farm to your doorstep.
         </p>
-        <a href="contact.html" class="btn btn-primary rounded-md inline-flex items-center gap-2" style="padding:12px 24px;">
-          Read More <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i>
-        </a>
+        <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+          <a href="contact.html" class="btn btn-primary rounded-md inline-flex items-center gap-2" style="padding:12px 24px;">
+            Contact Us <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i>
+          </a>
+          <a href="products.html" class="btn rounded-md inline-flex items-center gap-2" style="padding:12px 24px; border:1.5px solid var(--primary); color:var(--primary); background:transparent;">
+            Our Products <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -587,10 +624,16 @@
       <span class="export-eyebrow">. Our Export Capability</span>
       <h2 class="export-title">Serving Global Markets with Confidence</h2>
       <p class="export-desc">
-        Lucky Enterprises has established a strong presence in export markets, particularly in the Middle East. We
+        SS Coconuts has established a strong presence in export markets, particularly in the Middle East. We
         understand the requirements of international buyers and ensure that our products meet export standards in
         terms of quality, packaging, and handling.
       </p>
+      <div style="margin-top:32px;">
+        <a href="products.html" class="btn btn-primary rounded-full inline-flex items-center gap-2" style="padding:12px 32px; font-size:0.9rem;">
+          View Our Products <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i>
+        </a>
+        <a href="faq.html" style="margin-left:16px; font-size:0.9rem; color:var(--primary); font-weight:600; text-decoration:underline;">Have questions? See our FAQ →</a>
+      </div>
     </div>
   </section>
 
@@ -613,6 +656,6 @@
 </div><!-- /.page-content -->
 
 <!-- Scripts -->
-<script src="assets/js/script.js"></script>
+<script src="assets/js/script.js" defer></script>
 </body>
 </html>
