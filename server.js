@@ -174,6 +174,12 @@ app.post("/api/quote", async (req, res) => {
   }
 });
 
+// ── Custom 404 Handler ──────────────────────────────────────
+// Must be registered AFTER all other routes and static middleware
+app.use((req, res) => {
+  res.status(404).sendFile(__dirname + "/404.html");
+});
+
 // ── Start Server ────────────────────────────────────────────
 app.listen(PORT, () => {
   console.log(`✅ SS Coconuts server running at http://localhost:${PORT}`);

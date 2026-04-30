@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/images/logo/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — SS Coconuts</title>
+  <meta name="description" content="Oops! The page you're looking for doesn't exist. Head back to SS Coconuts and explore our premium coconut supply." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://sscoconuts.com/404.html" />
+
+  <!-- Noindex — 404 pages should not be indexed -->
+  <meta name="robots" content="noindex, follow" />
+  <meta name="author" content="SS Coconuts" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SS Coconuts" />
+  <meta property="og:title" content="Page Not Found — SS Coconuts" />
+  <meta property="og:description" content="The page you're looking for doesn't exist. Head back to SS Coconuts." />
+  <meta property="og:image" content="https://sscoconuts.com/assets/images/logo/logo.png" />
+  <meta property="og:url" content="https://sscoconuts.com/404.html" />
+
+  <!-- Tailwind CSS v2 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- SS Coconuts Custom Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Shared Components (navbar + footer) -->
+  <script src="assets/js/components.js" defer></script>
+
+  <style>
+    /* ── 404 Page Styles ────────────────────────────────────── */
+
+    /* Animated background */
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, #fdf6f0 0%, #fff8f3 50%, #fdf6f0 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Animated blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    .blob-1 {
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, #b8292f, #e05a5a);
+      top: -160px; right: -140px;
+      animation: blobFloat 8s ease-in-out infinite;
+    }
+    .blob-2 {
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, #2d7a2d, #5cb85c);
+      bottom: -100px; left: -100px;
+      animation: blobFloat 10s ease-in-out infinite reverse;
+    }
+    .blob-3 {
+      width: 260px; height: 260px;
+      background: radial-gradient(circle, #f59e0b, #fbbf24);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      animation: blobFloat 12s ease-in-out infinite 2s;
+    }
+    @keyframes blobFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(20px, -20px) scale(1.05); }
+      66%       { transform: translate(-15px, 15px) scale(0.97); }
+    }
+    .blob-3 {
+      transform-origin: center;
+    }
+
+    /* Main content wrapper */
+    .error-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Giant 404 number */
+    .error-number {
+      font-size: clamp(7rem, 20vw, 14rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, #b8292f 0%, #e05a5a 50%, #b8292f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      user-select: none;
+      animation: pulseNum 3s ease-in-out infinite;
+    }
+    @keyframes pulseNum {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.92; transform: scale(1.015); }
+    }
+
+    /* Floating coconut icon inside 404 */
+    .coco-bounce {
+      display: inline-block;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      animation: cocoFloat 3s ease-in-out infinite;
+      filter: drop-shadow(0 12px 24px rgba(0,0,0,0.15));
+      line-height: 1;
+    }
+    @keyframes cocoFloat {
+      0%, 100% { transform: translateY(0) rotate(-8deg); }
+      50%       { transform: translateY(-18px) rotate(8deg); }
+    }
+
+    /* Decorative divider */
+    .error-divider {
+      width: 64px; height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+      margin: 0 auto 28px;
+    }
+
+    /* Quick-link pills */
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .quick-link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 50px;
+      background: #fff;
+      border: 1.5px solid #e5e7eb;
+      color: #374151;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .quick-link-pill:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: rgba(184, 41, 47, 0.04);
+      box-shadow: 0 4px 16px rgba(184, 41, 47, 0.12);
+      transform: translateY(-2px);
+    }
+    .quick-link-pill i {
+      font-size: 0.75rem;
+    }
+
+    /* Primary CTA button */
+    .cta-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 36px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 24px rgba(184, 41, 47, 0.3);
+    }
+    .cta-home:hover {
+      background: #9e1e23;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(184, 41, 47, 0.4);
+    }
+    .cta-home i { font-size: 0.85rem; }
+
+    /* Countdown timer */
+    .redirect-bar {
+      margin-top: 32px;
+      padding: 14px 28px;
+      background: rgba(184, 41, 47, 0.06);
+      border: 1px solid rgba(184, 41, 47, 0.15);
+      border-radius: 12px;
+      font-size: 0.82rem;
+      color: #555;
+      text-align: center;
+      max-width: 380px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .redirect-bar #countdown {
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    /* Decorative scattered coconut emojis */
+    .deco-emoji {
+      position: absolute;
+      font-size: 1.6rem;
+      opacity: 0.12;
+      pointer-events: none;
+      animation: driftFloat var(--dur, 7s) ease-in-out infinite;
+      animation-delay: var(--delay, 0s);
+    }
+    @keyframes driftFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50%       { transform: translateY(-22px) rotate(15deg); }
+    }
+
+    /* Search box style */
+    .search-hint {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .error-content { padding: 64px 20px 48px; }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+  <div class="page-content">
+
+    <!-- Navbar injected by components.js -->
+
+    <!-- ============================================================
+         404 MAIN SECTION
+    ============================================================ -->
+    <main class="error-page" id="error-page-main">
+
+      <!-- Animated background blobs -->
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
+      <div class="blob blob-3" aria-hidden="true"></div>
+
+      <!-- Scattered decorative emojis -->
+      <span class="deco-emoji" style="top:12%; left:6%; --dur:6s; --delay:0s;">🥥</span>
+      <span class="deco-emoji" style="top:20%; right:8%; --dur:8s; --delay:1.5s; font-size:2rem;">🌴</span>
+      <span class="deco-emoji" style="bottom:22%; left:10%; --dur:7s; --delay:0.8s;">🌿</span>
+      <span class="deco-emoji" style="bottom:15%; right:6%; --dur:9s; --delay:2s;">🥥</span>
+      <span class="deco-emoji" style="top:60%; left:3%; --dur:5s; --delay:3s; font-size:1.2rem;">🌴</span>
+      <span class="deco-emoji" style="top:40%; right:4%; --dur:10s; --delay:0.5s; font-size:1.1rem;">🌿</span>
+
+      <div class="error-content">
+        <div class="text-center" style="max-width: 620px; width: 100%;">
+
+          <!-- Floating coconut illustration -->
+          <div class="mb-4">
+            <span class="coco-bounce" aria-hidden="true">🥥</span>
+          </div>
+
+          <!-- Giant 404 -->
+          <div class="error-number" aria-label="Error 404">404</div>
+
+          <!-- Eyebrow label -->
+          <span
+            class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest mt-4 mb-6"
+            style="color: var(--primary); letter-spacing: 0.15em;">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            Page Not Found
+          </span>
+
+          <!-- Divider -->
+          <div class="error-divider"></div>
+
+          <!-- Heading — single H1 -->
+          <h1
+            class="font-extrabold text-gray-900 mb-4"
+            style="font-size: clamp(1.5rem, 4vw, 2.25rem); line-height: 1.2;">
+            This page got lost in the coconut grove
+          </h1>
+
+          <!-- Description -->
+          <p class="text-gray-500 leading-relaxed mb-8" style="font-size: 0.95rem; max-width: 460px; margin-left: auto; margin-right: auto;">
+            The page you're looking for might have been moved, renamed, or never existed. Let's get you back on the right path.
+          </p>
+
+          <!-- Primary CTA -->
+          <a href="index.html" id="goHomeBtn" class="cta-home">
+            <i class="fa-solid fa-house"></i>
+            Back to Home
+          </a>
+
+          <!-- Quick navigation links -->
+          <div class="quick-links mt-10">
+            <a href="products.html" id="err404Products" class="quick-link-pill">
+              <i class="fa-solid fa-box-open"></i> Our Products
+            </a>
+            <a href="about.html" id="err404About" class="quick-link-pill">
+              <i class="fa-solid fa-leaf"></i> About Us
+            </a>
+            <a href="contact.html" id="err404Contact" class="quick-link-pill">
+              <i class="fa-solid fa-phone"></i> Contact
+            </a>
+            <a href="faq.html" id="err404Faq" class="quick-link-pill">
+              <i class="fa-regular fa-circle-question"></i> FAQs
+            </a>
+          </div>
+
+          <!-- Auto-redirect countdown -->
+          <div class="redirect-bar mt-8">
+            <i class="fa-regular fa-clock mr-1" style="color: var(--primary);"></i>
+            Redirecting you to the homepage in <span id="countdown">10</span> seconds…
+            <span class="ml-1">
+              <a href="index.html" style="color: var(--primary); font-weight: 700; text-decoration: underline;">Go now</a>
+            </span>
+          </div>
+
+          <p class="search-hint mt-4">
+            <i class="fa-solid fa-magnifying-glass mr-1"></i>
+            Looking for something specific? Try our <a href="products.html" style="color:var(--primary); text-decoration:underline;">products page</a> or <a href="contact.html" style="color:var(--primary); text-decoration:underline;">contact our team</a>.
+          </p>
+
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Footer injected by components.js -->
+
+  </div><!-- /.page-content -->
+
+  <!-- Scripts -->
+  <script src="assets/js/script.js"></script>
+  <script>
+    // ── Auto-redirect countdown ───────────────────────────────
+    (function () {
+      var seconds = 10;
+      var el = document.getElementById('countdown');
+      if (!el) return;
+
+      var timer = setInterval(function () {
+        seconds--;
+        el.textContent = seconds;
+        if (seconds <= 0) {
+          clearInterval(timer);
+          window.location.href = 'index.html';
+        }
+      }, 1000);
+    })();
+  </script>
+</body>
+
+</html>
