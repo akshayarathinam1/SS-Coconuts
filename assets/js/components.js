@@ -189,7 +189,7 @@
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-12">
 
-        <!-- Logo -->
+        <!-- Logo + Social Media -->
         <div class="flex flex-col gap-5">
           <a href="${root}index.html">
             <img src="${root}assets/images/logo/logo.png" alt="SS Coconuts Logo" style="width:84px;" />
@@ -197,6 +197,41 @@
           <p style="font-size:.78rem;" class="text-gray-500 leading-relaxed max-w-xs">
             Premium coconut supplier from Tamil Nadu, trusted by retailers and exporters across India and the Middle East since 1989.
           </p>
+
+          <!-- Social Icons -->
+          <div>
+            <p style="font-size:.7rem; letter-spacing:.1em; font-weight:700; text-transform:uppercase; color:#111; margin-bottom:10px;">Follow Us</p>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <a href="https://www.facebook.com/sscoconuts" target="_blank" rel="noopener noreferrer"
+                 aria-label="SS Coconuts on Facebook"
+                 style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(184,41,47,0.1);color:#b8292f;text-decoration:none;transition:background .2s,color .2s;"
+                 onmouseover="this.style.background='#b8292f';this.style.color='#fff';"
+                 onmouseout="this.style.background='rgba(184,41,47,0.1)';this.style.color='#b8292f';">
+                <i class="fa-brands fa-facebook-f" style="font-size:13px;"></i>
+              </a>
+              <a href="https://www.instagram.com/sscoconuts" target="_blank" rel="noopener noreferrer"
+                 aria-label="SS Coconuts on Instagram"
+                 style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(184,41,47,0.1);color:#b8292f;text-decoration:none;transition:background .2s,color .2s;"
+                 onmouseover="this.style.background='#b8292f';this.style.color='#fff';"
+                 onmouseout="this.style.background='rgba(184,41,47,0.1)';this.style.color='#b8292f';">
+                <i class="fa-brands fa-instagram" style="font-size:13px;"></i>
+              </a>
+              <a href="https://wa.me/919360311236" target="_blank" rel="noopener noreferrer"
+                 aria-label="Contact SS Coconuts on WhatsApp"
+                 style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(184,41,47,0.1);color:#b8292f;text-decoration:none;transition:background .2s,color .2s;"
+                 onmouseover="this.style.background='#b8292f';this.style.color='#fff';"
+                 onmouseout="this.style.background='rgba(184,41,47,0.1)';this.style.color='#b8292f';">
+                <i class="fa-brands fa-whatsapp" style="font-size:13px;"></i>
+              </a>
+              <a href="https://www.youtube.com/@sscoconuts" target="_blank" rel="noopener noreferrer"
+                 aria-label="SS Coconuts on YouTube"
+                 style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(184,41,47,0.1);color:#b8292f;text-decoration:none;transition:background .2s,color .2s;"
+                 onmouseover="this.style.background='#b8292f';this.style.color='#fff';"
+                 onmouseout="this.style.background='rgba(184,41,47,0.1)';this.style.color='#b8292f';">
+                <i class="fa-brands fa-youtube" style="font-size:13px;"></i>
+              </a>
+            </div>
+          </div>
         </div>
 
         <!-- Explore + Support -->

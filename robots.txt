@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block crawling of non-public folders
+Disallow: /node_modules/
+Disallow: /assets/js/
+Disallow: /.env
+
+# Sitemap location
+Sitemap: https://sscoconuts.com/sitemap.xml
