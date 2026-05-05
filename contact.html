@@ -296,15 +296,17 @@ document.getElementById('contactForm').addEventListener('submit', async function
   spinner.classList.remove('hidden');
   status.classList.add('hidden');
 
-  // ⚠️ Replace YOUR_FORM_ID below with your actual Formspree form ID
-  // Sign up free at https://formspree.io → New Form → copy the ID from the endpoint URL
+  // Formspree endpoint
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xzdorlnn';
 
   try {
     const res = await fetch(FORMSPREE_ENDPOINT, {
       method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: new URLSearchParams({
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
         name,
         email,
         phone,

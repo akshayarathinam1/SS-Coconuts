@@ -164,14 +164,20 @@
           <!-- Error msg -->
           <p id="quoteError" style="display:none; font-size:.75rem; color:var(--primary); margin-top:10px;"></p>
 
-          <a href="mailto:sscoconutss@yahoo.com?subject=Hello&body=Message here"
+          <button id="quoteSubmitBtn" type="submit"
                   style="margin-top:16px; width:100%; background:var(--primary); color:#fff;
                          border:none; border-radius:8px; padding:11px;
                          font-family:'Poppins',sans-serif; font-size:.88rem; font-weight:600;
                          cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;
-                         transition:.25s; text-decoration:none;">
-            <i class="fa-solid fa-paper-plane" style="font-size:12px;"></i> Send Message
-          </a>
+                         transition:.25s;">
+            <i class="fa-solid fa-paper-plane" id="quoteBtnIcon" style="font-size:12px;"></i>
+            <span id="quoteBtnText">Send Message</span>
+            <svg id="quoteSpinner" style="display:none; width:16px; height:16px; animation:spin 1s linear infinite;"
+                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle style="opacity:.25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path style="opacity:.75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 22 6.477 22 12h-4z"></path>
+            </svg>
+          </button>
 
           <p style="text-align:center; font-size:.72rem; color:#999; margin-top:10px;">
             Or call us: <a href="tel:+919360311236" style="color:var(--primary); font-weight:600;">+91 9360311236</a>
@@ -413,10 +419,87 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('quoteCloseBtn')?.addEventListener('click', closeQuoteModal);
   document.getElementById('quoteBackdrop')?.addEventListener('click', closeQuoteModal);
 
-
   // Focus-border highlight for inputs
   document.querySelectorAll('#quoteForm input, #quoteForm select').forEach(el => {
     el.addEventListener('focus',  () => el.style.borderColor = 'var(--primary)');
     el.addEventListener('blur',   () => el.style.borderColor = '#e0e0e0');
   });
+
+  // ── Quote Modal — Formsubmit.co ──
+  const QUOTE_FORMSPREE = 'https://formspree.io/f/xzdorlnn';
+
+
+  document.getElementById('quoteForm')?.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const name    = document.getElementById('qName').value.trim();
+    const phone   = document.getElementById('qPhone').value.trim();
+    const product = document.getElementById('qProduct').value;
+    const qty     = document.getElementById('qQty').value.trim();
+
+    const errorEl   = document.getElementById('quoteError');
+    const submitBtn = document.getElementById('quoteSubmitBtn');
+    const btnText   = document.getElementById('quoteBtnText');
+    const btnIcon   = document.getElementById('quoteBtnIcon');
+    const spinner   = document.getElementById('quoteSpinner');
+
+    // Validate
+    if (!name || !phone) {
+      errorEl.textContent = '⚠️ Please enter your name and phone number.';
+      errorEl.style.display = 'block';
+      return;
+    }
+    errorEl.style.display = 'none';
+
+    // Loading state
+    submitBtn.disabled = true;
+    btnText.textContent = 'Sending...';
+    btnIcon.style.display = 'none';
+    spinner.style.display = 'inline-block';
+
+    try {
+      const res = await fetch(QUOTE_FORMSPREE, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json' 
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          product:  product || '—',
+          quantity: qty     || '—',
+          _subject: `New Quote Request from ${name}`
+        })
+      });
+
+      if (res.ok) {
+        // Show success state
+        document.getElementById('quoteForm').style.display    = 'none';
+        document.getElementById('quoteSuccess').style.display = 'flex';
+        document.getElementById('quoteSuccess').style.flexDirection = 'column';
+        document.getElementById('quoteSuccess').style.alignItems = 'center';
+      } else {
+        const err = await res.json();
+        throw new Error(err.error || 'Submission failed');
+      }
+    } catch (err) {
+      errorEl.textContent = '❌ Failed to send. Please call +91 9360311236 directly.';
+      errorEl.style.display = 'block';
+      console.error('Quote form error:', err);
+    } finally {
+      submitBtn.disabled = false;
+      btnText.textContent = 'Send Message';
+      btnIcon.style.display = 'inline';
+      spinner.style.display = 'none';
+    }
+  });
+
+  // Spinner keyframes (injected once)
+  if (!document.getElementById('quoteSpinnerStyle')) {
+    const style = document.createElement('style');
+    style.id = 'quoteSpinnerStyle';
+    style.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
+    document.head.appendChild(style);
+  }
 });
