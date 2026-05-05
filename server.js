@@ -4,7 +4,7 @@ const nodemailer = require("nodemailer");
 const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
 // ── Middleware ──────────────────────────────────────────────
 app.use(cors());
@@ -16,11 +16,14 @@ app.use(express.static(__dirname));
 
 // ── Nodemailer Transporter ──────────────────────────────────
 const transporter = nodemailer.createTransport({
-  service: "gmail", // change to "yahoo", "outlook", etc. if needed
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
+  family: 4, // 👈 force IPv4
   auth: {
-    user: process.env.SENDER_EMAIL,   // your Gmail address
-    pass: process.env.SENDER_PASS,    // your Gmail App Password
-  },
+    user: process.env.SENDER_EMAIL,
+    pass: process.env.SENDER_PASS
+  }
 });
 
 // ── Contact Form Endpoint ───────────────────────────────────
