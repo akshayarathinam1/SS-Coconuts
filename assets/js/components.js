@@ -164,14 +164,14 @@
           <!-- Error msg -->
           <p id="quoteError" style="display:none; font-size:.75rem; color:var(--primary); margin-top:10px;"></p>
 
-          <button type="submit"
+          <a href="mailto:sscoconutss@yahoo.com?subject=Hello&body=Message here"
                   style="margin-top:16px; width:100%; background:var(--primary); color:#fff;
                          border:none; border-radius:8px; padding:11px;
                          font-family:'Poppins',sans-serif; font-size:.88rem; font-weight:600;
                          cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;
-                         transition:.25s;">
-            <i class="fa-solid fa-paper-plane" style="font-size:12px;"></i> Submit Request
-          </button>
+                         transition:.25s; text-decoration:none;">
+            <i class="fa-solid fa-paper-plane" style="font-size:12px;"></i> Send Message
+          </a>
 
           <p style="text-align:center; font-size:.72rem; color:#999; margin-top:10px;">
             Or call us: <a href="tel:+919360311236" style="color:var(--primary); font-weight:600;">+91 9360311236</a>
@@ -413,53 +413,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('quoteCloseBtn')?.addEventListener('click', closeQuoteModal);
   document.getElementById('quoteBackdrop')?.addEventListener('click', closeQuoteModal);
 
-  // Form submission — POSTs to /api/quote and emails admin
-  document.getElementById('quoteForm')?.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const name     = document.getElementById('qName').value.trim();
-    const phone    = document.getElementById('qPhone').value.trim();
-    const product  = document.getElementById('qProduct').value;
-    const quantity = document.getElementById('qQty').value.trim();
-    const errEl    = document.getElementById('quoteError');
-    const submitBtn = this.querySelector('button[type="submit"]');
-
-    if (!name || !phone) {
-      errEl.textContent = 'Please fill in your name and phone number.';
-      errEl.style.display = 'block';
-      return;
-    }
-    errEl.style.display = 'none';
-
-    // Loading state
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" style="font-size:12px;"></i> Sending…';
-
-    try {
-      const res  = await fetch('https://sscoconuts.onrender.com/api/quote', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ name, phone, product, quantity }),
-      });
-      const data = await res.json();
-
-      if (data.success) {
-        // Show success screen
-        document.getElementById('quoteForm').style.display    = 'none';
-        document.getElementById('quoteSuccess').style.display = 'block';
-        // Auto-close after 3 seconds
-        setTimeout(closeQuoteModal, 3000);
-      } else {
-        errEl.textContent = data.error || 'Something went wrong. Please try again.';
-        errEl.style.display = 'block';
-      }
-    } catch (err) {
-      errEl.textContent = 'Network error. Please check your connection and try again.';
-      errEl.style.display = 'block';
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane" style="font-size:12px;"></i> Submit Request';
-    }
-  });
 
   // Focus-border highlight for inputs
   document.querySelectorAll('#quoteForm input, #quoteForm select').forEach(el => {
