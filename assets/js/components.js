@@ -435,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" style="font-size:12px;"></i> Sending…';
 
     try {
-      const res  = await fetch('http://localhost:3000/api/quote', {
+      const res  = await fetch('https://sscoconuts.onrender.com/api/quote', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify({ name, phone, product, quantity }),
