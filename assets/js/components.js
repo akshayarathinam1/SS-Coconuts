@@ -25,7 +25,7 @@
 
       <!-- Logo -->
       <a href="${root}index.html" class="flex items-center" id="logoLink">
-        <img src="${root}assets/images/logo/logo.png" alt="SS Coconuts Logo" class="h-12 w-auto object-contain" />
+        <img src="${root}assets/images/logo/logo.png" alt="SS Coconuts Logo" class="h-16 w-auto object-contain" />
       </a>
 
       <!-- Desktop Menu -->
@@ -198,7 +198,7 @@
         <!-- Logo + Social Media -->
         <div class="flex flex-col gap-5">
           <a href="${root}index.html">
-            <img src="${root}assets/images/logo/logo.png" alt="SS Coconuts Logo" style="width:84px;" />
+            <img src="${root}assets/images/logo/logo.png" alt="SS Coconuts Logo" style="width:120px;" />
           </a>
           <p style="font-size:.78rem;" class="text-gray-500 leading-relaxed max-w-xs">
             Premium coconut supplier from Tamil Nadu, trusted by retailers and exporters across India and the Middle East since 1989.
