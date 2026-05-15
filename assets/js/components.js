@@ -21,11 +21,11 @@
   // ── Navbar HTML ───────────────────────────────────────────────
   const navbarHTML = `
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white" role="navigation" aria-label="Main navigation">
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between" style="height:68px;">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between" style="height:80px;">
 
       <!-- Logo -->
       <a href="${root}index.html" class="flex items-center" id="logoLink">
-        <img src="${root}assets/images/logo/logo.png" alt="SS Coconuts Logo" class="h-16 w-auto object-contain" />
+        <img src="${root}assets/images/logo/logo.png" alt="SS Coconuts Logo" style="width:100px;height:100px;object-fit:contain;" />
       </a>
 
       <!-- Desktop Menu -->
@@ -198,7 +198,7 @@
         <!-- Logo + Social Media -->
         <div class="flex flex-col gap-5">
           <a href="${root}index.html">
-            <img src="${root}assets/images/logo/logo.png" alt="SS Coconuts Logo" style="width:120px;" />
+            <img src="${root}assets/images/logo/logo.png" alt="SS Coconuts Logo" style="width:180px;" />
           </a>
           <p style="font-size:.78rem;" class="text-gray-500 leading-relaxed max-w-xs">
             Premium coconut supplier from Tamil Nadu, trusted by retailers and exporters across India and the Middle East since 1989.
@@ -326,7 +326,7 @@
     <div style="background:rgba(0,0,0,.12);">
       <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
         <p class="text-gray-700" style="font-size:.72rem;">© 2026 SS Coconuts. All Rights Reserved.</p>
-        <p class="text-gray-700" style="font-size:.72rem;">Designed by Modo Minds</p>
+        <p class="text-gray-700" style="font-size:.72rem;">Designed by <a href="https://modominds.com/" target="_blank" rel="noopener noreferrer" style="color:#b8292f;font-weight:600;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='0.75';" onmouseout="this.style.opacity='1';">Modo Minds</a></p>
       </div>
     </div>
   </footer>
@@ -353,7 +353,7 @@
     // Add top padding to the first content element so it clears the fixed navbar
     const firstContent = document.querySelector('.page-content');
     if (firstContent && !firstContent.style.marginTop) {
-      firstContent.style.marginTop = '68px';
+      firstContent.style.marginTop = '80px';
     }
 
     // ── Mobile menu toggle ──────────────────────────────────────
